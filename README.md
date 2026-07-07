@@ -5,7 +5,7 @@ A curated collection of battle-tested regex patterns with TypeScript types, Zod 
 **Patterns live in `/patterns/*.json`** — the single source of truth used by both this package and the [regex.to](https://regex.to) website.
 
 [![npm version](https://img.shields.io/npm/v/@regexto/validators)](https://www.npmjs.com/package/@regexto/validators)
-[![license](https://img.shields.io/npm/l/@regexto/validators)](LICENSE)
+[![license](https://img.shields.io/npm/l/@regexto/validators)](https://github.com/regex-to/validators/blob/main/LICENSE)
 
 ## Installation
 

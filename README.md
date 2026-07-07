@@ -1,142 +1,131 @@
-# @regexto/validators
+# 📦 @regexto/validators
 
-A curated collection of battle-tested regex patterns with TypeScript types, Zod v4 integration, and multi-language code generation.
+> Curated, production-ready, and battle-tested regex patterns with native TypeScript support, Zod integration, and multi-language compilation.
 
-**Patterns live in `/patterns/*.json`** — the single source of truth used by both this package and the [regex.to](https://regex.to) website.
+**All patterns are open-source, fully tested, and visualized live on [regex.to](https://regex.to).**
 
-[![npm version](https://img.shields.io/npm/v/@regexto/validators)](https://www.npmjs.com/package/@regexto/validators)
+[![npm version](https://img.shields.io/npm/v/@regexto/validators?color=brightgreen)](https://www.npmjs.com/package/@regexto/validators)
 [![license](https://img.shields.io/npm/l/@regexto/validators)](https://github.com/regex-to/validators/blob/main/LICENSE)
+[![Tested & Visualized Live](https://img.shields.io/badge/Tested%20%26%20Visualized-Live%20on%20regex.to-blueviolet)](https://regex.to)
+
+---
+
+## Why `@regexto/validators`?
+
+- 🔍 **Tested and Visualized Live:** Every single pattern in this library can be searched, tested, and visualized interactively at [regex.to](https://regex.to).
+- 🚀 **Zero Dependencies:** Pure JavaScript/TypeScript validator package. Lightweight and lightning-fast.
+- 🛠️ **Zod v4 Ready:** Built-in integration for type-safe form schema validation out of the box.
+- 📁 **JSON Single Source of Truth:** Patterns are declared declaratively in standard JSON files.
+
+---
 
 ## Installation
 
 ```bash
 npm install @regexto/validators
-# with Zod v4 integration:
-npm install @regexto/validators zod
+
+# Optional: if you use Zod validation
+npm install zod
 ```
 
-## Usage
+---
+
+## Quick Start
+
+### 1. Basic Validation (JavaScript / TypeScript)
 
 ```typescript
-import { test, validate, getRegex, getAllPatterns } from '@regexto/validators';
+import { test, validate, getRegex } from '@regexto/validators';
 
-// Quick boolean test (partial match — use validate() for full-string validation)
+// 1. Quick boolean test
 test('email', 'user@example.com');   // → true
-test('email', 'invalid');            // → false
+test('email', 'invalid-email');      // → false
 
-// Full-string validation with anchors
-const { valid } = validate('ipv4', '192.168.1.1');  // → { valid: true, ... }
-const { valid: no } = validate('ipv4', '999.0.0.0'); // → { valid: false, ... }
+// 2. Full validation with capture group outputs
+const result = validate('ipv4', '192.168.1.1');
+console.log(result.valid); // → true
 
-// Get the compiled RegExp
-const re = getRegex('email');        // → /[a-zA-Z0-9...]+@.../i
-
-// All patterns as an array
-const all = getAllPatterns();        // → PatternData[]
+// 3. Extract the raw RegExp instance
+const emailRegex = getRegex('email'); // → RegExp instance
 ```
 
-### Zod v4 Integration
+### 2. Type-Safe Zod Schema Integration
 
 ```typescript
-import { zodSchema, zodObjectSchema } from '@regexto/validators/zod';
 import { z } from 'zod';
+import { zodSchema, zodObjectSchema } from '@regexto/validators/zod';
 
-// Single-field schema
-const emailSchema = zodSchema('email');
-emailSchema.parse('user@example.com');   // ✓
-emailSchema.parse('invalid');            // ✗ ZodError
+// Create a single-field validator schema
+const emailValidator = zodSchema('email');
+emailValidator.parse('contact@regex.to'); // ✓ Valid
 
-// Object schema from a field map
-const contactSchema = zodObjectSchema({
+// Easily construct object validation shapes
+const registrationSchema = zodObjectSchema({
   email: 'email',
   website: 'url',
+  zipCode: 'us-zip',
 });
-type ContactForm = z.infer<typeof contactSchema>;
+
+type RegistrationData = z.infer<typeof registrationSchema>;
 ```
 
-### detect() — Auto-detect string type
+### 3. Smart Type Auto-Detection
+
+Pass an unknown string, and the validator will identify matching formats:
 
 ```typescript
 import { detect } from '@regexto/validators';
 
-detect('user@example.com');
-// → [{ pattern: { slug: 'email', ... }, matchType: 'full', coverage: 1 }]
-
-detect('+14155552671');
-// → [{ pattern: { slug: 'phone-e164', ... }, matchType: 'full', coverage: 1 }]
-
-detect('0x742d35Cc6634C0532925a3b844Bc454e4438f44e');
-// → [{ pattern: { slug: 'eth-address', ... }, matchType: 'full', coverage: 1 }]
+const matches = detect('0x742d35Cc6634C0532925a3b844Bc454e4438f44e');
+// → [{ pattern: { slug: 'ethereum-address', ... }, matchType: 'full', coverage: 1 }]
 ```
+
+---
 
 ## Available Patterns
 
-| Slug | Name | Category |
-|------|------|----------|
-| `email` | Email Address | Internet |
-| `url` | URL (HTTP/HTTPS) | Internet |
-| `ipv4` | IPv4 Address | Network |
-| `ipv6` | IPv6 Address | Network |
-| `hex-color` | Hex Color | Design |
-| `rgb-color` | RGB Color | Design |
-| `iso-date` | ISO 8601 Date | Date & Time |
-| `semver` | Semantic Version | Dev |
-| `slug` | URL Slug | Web |
-| `uuid` | UUID | Dev |
-| `credit-card` | Credit Card Number | Finance |
-| `iban` | IBAN | Finance |
-| `jwt` | JSON Web Token | Security |
-| `sha256` | SHA-256 Hash | Crypto |
-| `ethereum-address` | Ethereum Address | Crypto |
-| `bitcoin-address` | Bitcoin Address | Crypto |
-| `pl-nip` | Polish NIP (Tax ID) | Finance |
-| `pl-pesel` | Polish PESEL | Identity |
-| `pl-regon` | Polish REGON | Finance |
-| `us-ssn` | US Social Security Number | Identity |
-| `us-zip` | US ZIP Code | Address |
-| `uk-postcode` | UK Postcode | Address |
-| … | 79 patterns total | [Browse all](https://regex.to/patterns) |
+Here is a curated subset of the 79+ patterns supported. View all of them and test them live at [regex.to/patterns](https://regex.to/patterns):
 
-## API
+| Slug | Name | Category | Live Sandbox |
+|------|------|----------|--------------|
+| `email` | Email Address | Internet | [Test Live ↗](https://regex.to/email) |
+| `url` | URL (HTTP/HTTPS) | Internet | [Test Live ↗](https://regex.to/url) |
+| `ipv4` | IPv4 Address | Network | [Test Live ↗](https://regex.to/ipv4) |
+| `ipv6` | IPv6 Address | Network | [Test Live ↗](https://regex.to/ipv6) |
+| `hex-color` | Hex Color | Design | [Test Live ↗](https://regex.to/hex-color) |
+| `semver` | Semantic Version | Dev | [Test Live ↗](https://regex.to/semver) |
+| `uuid` | UUID | Dev | [Test Live ↗](https://regex.to/uuid) |
+| `credit-card` | Credit Card Number | Finance | [Test Live ↗](https://regex.to/credit-card) |
+| `iban` | IBAN | Finance | [Test Live ↗](https://regex.to/iban) |
+| `pl-nip` | Polish NIP (Tax ID) | Finance | [Test Live ↗](https://regex.to/pl-nip) |
+| `pl-pesel` | Polish PESEL | Identity | [Test Live ↗](https://regex.to/pl-pesel) |
+| `us-zip` | US ZIP Code | Address | [Test Live ↗](https://regex.to/us-zip) |
+| `uk-postcode` | UK Postcode | Address | [Test Live ↗](https://regex.to/uk-postcode) |
 
-| Function | Description |
-|----------|-------------|
-| `test(slug, value)` | Quick boolean — partial match (substring) |
-| `validate(slug, value)` | Full-string match with anchors, returns result object |
-| `getRegex(slug)` | Returns the compiled `RegExp` |
-| `detect(input)` | Auto-detect type of an unknown string |
-| `getAllPatterns()` | Returns all patterns as `PatternData[]` |
-| `getPattern(slug)` | Returns a single `PatternData` or `null` |
-| `getByCategory(category)` | Filter by category |
-| `getByTags(tags[])` | Filter by tags |
-| `getSlugs()` | All available slugs |
-| `getCategories()` | All available category names |
-| `zodSchema(slug)` | Zod string schema *(zod import)* |
-| `zodObjectSchema(fieldMap)` | Zod object schema *(zod import)* |
+---
 
-## Adding a Pattern
+## Contributing
 
-Create a JSON file in `patterns/` and open a Pull Request:
+Adding new patterns is fully automated. Simply create a JSON file inside the `patterns/` directory of the repository and open a Pull Request:
 
 ```json
 {
-  "slug": "my-pattern",
-  "name": "My Pattern",
-  "description": "What it validates",
-  "category": "Internet",
+  "slug": "my-custom-pattern",
+  "name": "My Custom Pattern",
+  "description": "Validates custom formats",
+  "category": "Web",
   "pattern": "your[regex]+",
   "flags": "i",
-  "examples": ["valid"],
-  "counterExamples": ["invalid"],
-  "tags": ["tag1"],
-  "useCases": ["Use case description"]
+  "examples": ["validexample"],
+  "counterExamples": ["invalidexample"],
+  "tags": ["custom"]
 }
 ```
 
-The JSON file is automatically picked up by both the npm package and the regex.to website at build time — no code changes needed.
+The newly added pattern will be parsed automatically at build-time by both the NPM package and the [regex.to](https://regex.to) dynamic website.
 
-See the full [contribution guide](https://regex.to/docs#contributing).
+---
 
 ## License
 
-MIT © [regex.to](https://regex.to)
+Released under the [MIT License](https://github.com/regex-to/validators/blob/main/LICENSE). Developed and maintained by the [regex.to](https://regex.to) team.

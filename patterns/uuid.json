@@ -1,0 +1,14 @@
+{
+  "slug": "uuid",
+  "name": "UUID v4",
+  "description": "Matches a UUID version 4 — randomly generated universally unique identifier in the standard 8-4-4-4-12 format.",
+  "category": "Security",
+  "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}",
+  "flags": "i",
+  "examples": ["550e8400-e29b-41d4-a716-446655440000", "6ba7b810-9dad-41d1-80b4-00c04fd430c8"],
+  "counterExamples": ["550e8400-e29b-11d4-a716-446655440000", "not-a-uuid", "123e4567-e89b-12d3-a456"],
+  "tags": ["uuid", "guid", "identifier", "id"],
+  "useCases": ["Database primary keys", "API resource IDs", "Session tokens"],
+  "seoTitle": "UUID v4 Regex — Validate UUID in JS, Go, PHP",
+  "seoDescription": "Regex for UUID v4 validation. Strictly checks version bit and variant bits."
+}

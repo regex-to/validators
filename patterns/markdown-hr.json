@@ -1,0 +1,14 @@
+{
+  "slug": "markdown-hr",
+  "name": "Markdown Horizontal Rule",
+  "description": "Matches a Markdown horizontal rule — three or more dashes, asterisks, or underscores on a line.",
+  "category": "Markdown",
+  "pattern": "^([-*_])\\s*\\1\\s*\\1[\\s\\1]*$",
+  "flags": "m",
+  "examples": ["---", "***", "___", "- - -", "* * *"],
+  "counterExamples": ["--", "**", "not a rule", "--- text"],
+  "tags": ["markdown", "horizontal-rule", "hr", "divider", "separator"],
+  "useCases": ["Markdown parsers", "Section detection", "Document structure analysis"],
+  "seoTitle": "Markdown Horizontal Rule Regex — Parse --- in JS, Go, PHP",
+  "seoDescription": "Regex for Markdown horizontal rule (---, ***, ___) detection."
+}

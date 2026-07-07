@@ -1,0 +1,15 @@
+{
+  "slug": "pl-pesel",
+  "name": "Polish PESEL",
+  "description": "Polish national identification number (PESEL) — an 11-digit number encoding date of birth, gender, and a checksum, assigned to every citizen.",
+  "category": "Identity",
+  "pattern": "\\d{11}",
+  "flags": "",
+  "examples": ["44051401458", "02070803628", "90090515836"],
+  "counterExamples": ["1234567890", "123456789012", "abcdefghijk"],
+  "locales": ["pl"],
+  "tags": ["poland", "pesel", "identity", "pl", "polish"],
+  "useCases": ["Polish government forms", "Healthcare system integration", "KYC validation"],
+  "seoTitle": "Polish PESEL Regex — Validate PESEL Number in JS, Go, PHP",
+  "seoDescription": "Regex pattern for validating Polish PESEL numbers. Generate code for JavaScript, TypeScript (Zod), Go, and PHP with unit tests."
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "us-ssn",
+  "name": "US Social Security Number",
+  "description": "Matches a US Social Security Number (SSN) in the standard NNN-NN-NNNN format.",
+  "category": "Identity",
+  "pattern": "\\d{3}-\\d{2}-\\d{4}",
+  "flags": "",
+  "examples": ["123-45-6789", "001-01-0001", "999-99-9999"],
+  "counterExamples": ["123-456-789", "12-34-5678", "123456789"],
+  "locales": ["en-US"],
+  "tags": ["ssn", "us", "identity", "tax", "american"],
+  "useCases": ["US government forms", "Tax filing", "KYC verification"],
+  "seoTitle": "US SSN Regex — Validate Social Security Numbers",
+  "seoDescription": "Regex for US Social Security Number (SSN) format validation."
+}

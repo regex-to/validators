@@ -1,0 +1,15 @@
+{
+  "slug": "phone-uk",
+  "name": "Phone — UK",
+  "description": "Matches UK phone numbers in standard formats, starting with 0 or +44.",
+  "category": "Phone",
+  "pattern": "(\\+44\\s?|0)(\\d{2,4}\\s?\\d{3,4}\\s?\\d{3,4}|\\d{10})",
+  "flags": "",
+  "examples": ["+44 20 7183 8750", "020 7183 8750", "07700 900123", "07700900123"],
+  "counterExamples": ["+1 555 867 5309", "123456", "00000000000"],
+  "locales": ["en-GB"],
+  "tags": ["phone", "uk", "british", "mobile"],
+  "useCases": ["UK contact forms", "Address validation", "CRM systems"],
+  "seoTitle": "UK Phone Regex — Validate British Phone Numbers",
+  "seoDescription": "Regex for UK phone number validation. Supports landline and mobile numbers."
+}

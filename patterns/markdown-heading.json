@@ -1,0 +1,14 @@
+{
+  "slug": "markdown-heading",
+  "name": "Markdown Heading",
+  "description": "Matches Markdown ATX-style headings — # through ###### followed by text. Captures both the level (number of #) and the heading text.",
+  "category": "Markdown",
+  "pattern": "^(#{1,6})\\s+(.+)$",
+  "flags": "m",
+  "examples": ["# H1 Title", "## Section Two", "### Subsection", "###### Smallest Heading"],
+  "counterExamples": ["#NoSpace", "####### Too many hashes", "Not a heading"],
+  "tags": ["markdown", "heading", "h1", "h2", "title", "document"],
+  "useCases": ["Markdown parsers", "Table of contents generators", "Documentation tools"],
+  "seoTitle": "Markdown Heading Regex — Parse # Headings in JS, Go, PHP",
+  "seoDescription": "Regex for Markdown ATX heading detection and level extraction."
+}

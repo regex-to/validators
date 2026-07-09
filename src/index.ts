@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// @regex.to/validators — Core pattern definitions and utilities
+// @regexto/validators — Core pattern definitions and utilities
 // Patterns are loaded from the /patterns directory (JSON source of truth).
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -77,7 +77,7 @@ export const PATTERNS: Readonly<Record<string, PatternData>> = loadPatterns();
  */
 export function getRegex(slug: string): RegExp {
   const p = PATTERNS[slug];
-  if (!p) throw new Error(`Pattern "${slug}" not found in @regex.to/validators`);
+  if (!p) throw new Error(`Pattern "${slug}" not found in @regexto/validators`);
   return new RegExp(p.pattern, p.flags);
 }
 

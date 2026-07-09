@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// @regex.to/validators — Zod v4 integration
+// @regexto/validators — Zod v4 integration
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { z } from "zod";
@@ -12,13 +12,13 @@ type ZodStringSchema = z.ZodString;
  * Returns a Zod string schema with the regex validator applied.
  *
  * @example
- * import { zodSchema } from '@regex.to/validators/zod';
+ * import { zodSchema } from '@regexto/validators/zod';
  * const emailSchema = zodSchema('email');
  * emailSchema.parse('user@example.com'); // ✓
  */
 export function zodSchema(slug: string, message?: string): ZodStringSchema {
   const p = PATTERNS[slug];
-  if (!p) throw new Error(`Pattern "${slug}" not found in @regex.to/validators`);
+  if (!p) throw new Error(`Pattern "${slug}" not found in @regexto/validators`);
   const regex = new RegExp(`^(?:${p.pattern})$`, p.flags);
   return z.string().regex(regex, message ?? `Invalid ${p.name}`);
 }

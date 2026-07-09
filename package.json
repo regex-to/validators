@@ -1,6 +1,6 @@
 {
   "name": "@regexto/validators",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A curated collection of battle-tested regex patterns with TypeScript types, Zod integration, and multi-language code generation.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

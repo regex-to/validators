@@ -3,7 +3,7 @@
   "name": "Username",
   "description": "Matches a valid username: 3–20 characters, letters, digits, hyphens, and underscores. No leading/trailing hyphens or underscores.",
   "category": "Social",
-  "pattern": "[a-zA-Z0-9](?:[a-zA-Z0-9_\\-]{1,18}[a-zA-Z0-9])?",
+  "pattern": "^[a-zA-Z0-9](?!.*[-_]{2})[a-zA-Z0-9_\\-]{1,18}[a-zA-Z0-9]$",
   "flags": "",
   "examples": ["john_doe", "user-123", "alice", "web_dev_42"],
   "counterExamples": ["-john", "john-", "_user", "a", "this_username_is_way_too_long_for_any_system"],

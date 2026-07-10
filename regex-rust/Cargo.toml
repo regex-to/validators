@@ -1,0 +1,15 @@
+[package]
+name = "regexto-validators"
+version = "1.0.1"
+edition = "2021"
+authors = ["Lukasz Oleniuk <lukasz@oleniuk.pl>"]
+description = "A zero-dependency collection of battle-tested regex patterns for Rust, backed by regex.to."
+license = "MIT"
+repository = "https://github.com/regex-to/validators-rust"
+
+[dependencies]
+fancy-regex = "0.13"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+lazy_static = "1.4"
+include_dir = "0.7.4"

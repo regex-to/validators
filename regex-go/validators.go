@@ -5,9 +5,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"path"
-	"regexp"
 	"strings"
 	"sync"
+	
+	"github.com/dlclark/regexp2"
 )
 
 //go:embed patterns/*.json
@@ -29,7 +30,7 @@ type PatternData struct {
 }
 
 var (
-	cache      = make(map[string]*regexp.Regexp)
+	cache      = make(map[string]*regexp2.Regexp)
 	dataCache  = make(map[string]PatternData)
 	cacheMutex sync.RWMutex
 )
@@ -61,8 +62,8 @@ func GetPatternData(slug string) (PatternData, error) {
 	return data, nil
 }
 
-// GetRegex returns the compiled *regexp.Regexp for a given slug.
-func GetRegex(slug string) (*regexp.Regexp, error) {
+// GetRegex returns the compiled *regexp2.Regexp for a given slug.
+func GetRegex(slug string) (*regexp2.Regexp, error) {
 	cacheMutex.RLock()
 	if re, exists := cache[slug]; exists {
 		cacheMutex.RUnlock()
@@ -92,7 +93,7 @@ func GetRegex(slug string) (*regexp.Regexp, error) {
 		patternStr = "(?" + prefix + ")" + patternStr
 	}
 
-	re, err := regexp.Compile(patternStr)
+	re, err := regexp2.Compile(patternStr, 0)
 	if err != nil {
 		return nil, fmt.Errorf("failed to compile regex for '%s': %w", slug, err)
 	}
@@ -105,12 +106,12 @@ func GetRegex(slug string) (*regexp.Regexp, error) {
 }
 
 var (
-	unanchoredCache      = make(map[string]*regexp.Regexp)
+	unanchoredCache      = make(map[string]*regexp2.Regexp)
 	unanchoredCacheMutex sync.RWMutex
 )
 
-// GetRegexUnanchored returns the compiled unanchored *regexp.Regexp for a given slug.
-func GetRegexUnanchored(slug string) (*regexp.Regexp, error) {
+// GetRegexUnanchored returns the compiled unanchored *regexp2.Regexp for a given slug.
+func GetRegexUnanchored(slug string) (*regexp2.Regexp, error) {
 	unanchoredCacheMutex.RLock()
 	if re, exists := unanchoredCache[slug]; exists {
 		unanchoredCacheMutex.RUnlock()
@@ -135,7 +136,7 @@ func GetRegexUnanchored(slug string) (*regexp.Regexp, error) {
 		patternStr = "(?" + prefix + ")" + patternStr
 	}
 
-	re, err := regexp.Compile(patternStr)
+	re, err := regexp2.Compile(patternStr, 0)
 	if err != nil {
 		return nil, fmt.Errorf("failed to compile unanchored regex for '%s': %w", slug, err)
 	}
@@ -153,7 +154,7 @@ func Validate(slug string, input string) (bool, error) {
 	if err != nil {
 		return false, err
 	}
-	return re.MatchString(input), nil
+	return re.MatchString(input)
 }
 
 // Test checks if the input string matches the regex for the given slug (unanchored substring match).
@@ -162,7 +163,7 @@ func Test(slug string, input string) (bool, error) {
 	if err != nil {
 		return false, err
 	}
-	return re.MatchString(input), nil
+	return re.MatchString(input)
 }
 
 // GetAllPatterns returns all available patterns.
@@ -212,27 +213,31 @@ func Detect(input string) ([]DetectResult, error) {
 	for _, p := range patterns {
 		// 1. Full match
 		fullRe, err := GetRegex(p.Slug)
-		if err == nil && fullRe.MatchString(input) {
-			results = append(results, DetectResult{
-				Pattern:     p,
-				MatchType:   "full",
-				MatchedText: input,
-				Coverage:    1.0,
-			})
-			continue
+		if err == nil {
+			matched, _ := fullRe.MatchString(input)
+			if matched {
+				results = append(results, DetectResult{
+					Pattern:     p,
+					MatchType:   "full",
+					MatchedText: input,
+					Coverage:    1.0,
+				})
+				continue
+			}
 		}
 
 		// 2. Partial match
 		partialRe, err := GetRegexUnanchored(p.Slug)
 		if err == nil {
-			match := partialRe.FindString(input)
-			if match != "" {
-				coverage := float64(len(match)) / float64(len(input))
-				if len(match) >= 4 && coverage >= 0.2 {
+			matchObj, _ := partialRe.FindStringMatch(input)
+			if matchObj != nil {
+				matchText := matchObj.String()
+				coverage := float64(len(matchText)) / float64(len(input))
+				if len(matchText) >= 4 && coverage >= 0.2 {
 					results = append(results, DetectResult{
 						Pattern:     p,
 						MatchType:   "partial",
-						MatchedText: match,
+						MatchedText: matchText,
 						Coverage:    coverage,
 					})
 				}

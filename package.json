@@ -22,8 +22,10 @@
     "patterns"
   ],
   "scripts": {
+    "prebuild": "rm -rf patterns && cp -R ../patterns ./patterns",
     "build": "tsup src/index.ts src/zod.ts --format cjs,esm --dts --clean --shims",
-    "dev": "tsup src/index.ts --format cjs,esm --dts --watch --shims",
+    "dev": "npm run prebuild && tsup src/index.ts --format cjs,esm --dts --watch --shims",
+    "pretest": "npm run prebuild",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint src --ext .ts",

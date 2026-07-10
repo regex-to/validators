@@ -1,0 +1,14 @@
+{
+  "slug": "longitude",
+  "name": "Longitude",
+  "description": "Matches a geographic longitude coordinate between -180 and +180 degrees, with up to 6 decimal places.",
+  "category": "Geo",
+  "pattern": "-?(1[0-7]\\d(\\.\\d{1,6})?|[0-9]?\\d(\\.\\d{1,6})?|180(\\.0{1,6})?)",
+  "flags": "",
+  "examples": ["-0.1278", "151.2093", "0", "180", "-180.000000"],
+  "counterExamples": ["181.0", "-180.1", "abc", "0.123456789"],
+  "tags": ["longitude", "geo", "coordinates", "location", "gps"],
+  "useCases": ["GPS coordinate input", "Map integrations", "Location-based services"],
+  "seoTitle": "Longitude Regex — Validate Coordinates in JS, Go, PHP",
+  "seoDescription": "Regex for geographic longitude coordinate validation (-180 to 180)."
+}

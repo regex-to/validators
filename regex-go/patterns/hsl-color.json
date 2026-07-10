@@ -1,0 +1,14 @@
+{
+  "slug": "hsl-color",
+  "name": "HSL Color",
+  "description": "Matches a CSS HSL color value in the format hsl(H, S%, L%).",
+  "category": "Design",
+  "pattern": "hsl\\(\\s*(360|3[0-5]\\d|[12]\\d{2}|[1-9]\\d|\\d)\\s*,\\s*(100|[1-9]\\d|\\d)%\\s*,\\s*(100|[1-9]\\d|\\d)%\\s*\\)",
+  "flags": "i",
+  "examples": ["hsl(0, 100%, 50%)", "hsl(142, 70%, 55%)", "hsl(224, 10%, 9%)"],
+  "counterExamples": ["hsl(361, 100%, 50%)", "hsl(0, 101%, 50%)", "rgb(255, 0, 0)"],
+  "tags": ["hsl", "color", "css", "design"],
+  "useCases": ["CSS value parsing", "Theme generators", "Color pickers"],
+  "seoTitle": "HSL Color Regex — Validate HSL Values in JS, Go, PHP",
+  "seoDescription": "Regex for CSS HSL color value validation."
+}

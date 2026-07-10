@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "regexto-validators"
+version = "1.0.1"
+authors = [
+  { name="Lukasz Oleniuk", email="lukasz@oleniuk.pl" },
+]
+description = "A curated collection of battle-tested regex patterns with Python validation."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/regexto_validators"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/regexto_validators",
+    "patterns",
+]

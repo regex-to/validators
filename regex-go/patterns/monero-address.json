@@ -1,0 +1,14 @@
+{
+  "slug": "monero-address",
+  "name": "Monero Address",
+  "description": "Matches a Monero (XMR) standard address — starts with 4 and is exactly 95 Base58 characters.",
+  "category": "Crypto",
+  "pattern": "4[0-9AB][1-9A-HJ-NP-Za-km-z]{93}",
+  "flags": "",
+  "examples": ["44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A"],
+  "counterExamples": ["1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2", "0xde0B295669a9FD93d5F28D9", "short"],
+  "tags": ["monero", "xmr", "crypto", "address", "privacy", "blockchain"],
+  "useCases": ["Monero payment validation", "Privacy-focused crypto apps", "Exchange integrations"],
+  "seoTitle": "Monero Address Regex — Validate XMR Addresses",
+  "seoDescription": "Regex for Monero (XMR) wallet address validation."
+}

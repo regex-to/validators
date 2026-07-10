@@ -1,0 +1,93 @@
+name: Release & Distribute Packages
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  npm-publish:
+    name: Publish NPM Package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install Dependencies
+        run: cd regex-npm && npm ci
+      - name: Publish to NPM
+        run: cd regex-npm && npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  pypi-publish:
+    name: Publish Python Package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install build tools
+        run: python -m pip install --upgrade pip build twine
+      - name: Prepare Patterns
+        run: |
+          mkdir -p regex-python/src/regexto_validators/patterns
+          cp -r patterns/* regex-python/src/regexto_validators/patterns/
+      - name: Build and Publish
+        run: |
+          cd regex-python
+          python -m build
+          twine upload dist/*
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+
+  split-php:
+    name: Monorepo Split PHP
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Prepare PHP Package
+        run: |
+          mkdir -p regex-php/patterns
+          cp -r patterns/* regex-php/patterns/
+      - name: Split and Push
+        uses: danharrin/monorepo-split-github-action@v2.3.0
+        with:
+          package_directory: 'regex-php'
+          repository_organization: 'regex-to'
+          repository_name: 'validators-php'
+          target_branch: 'main'
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_message: "Mirror PHP package from monorepo"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+
+  split-go:
+    name: Monorepo Split Go
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Prepare Go Package
+        run: |
+          mkdir -p regex-go/patterns
+          cp -r patterns/* regex-go/patterns/
+      - name: Split and Push
+        uses: danharrin/monorepo-split-github-action@v2.3.0
+        with:
+          package_directory: 'regex-go'
+          repository_organization: 'regex-to'
+          repository_name: 'validators-go'
+          target_branch: 'main'
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_message: "Mirror Go package from monorepo"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}

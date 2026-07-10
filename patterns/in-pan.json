@@ -1,0 +1,15 @@
+{
+  "slug": "in-pan",
+  "name": "Indian PAN Card",
+  "description": "Matches an Indian Permanent Account Number (PAN) — 10 characters: 5 uppercase letters, 4 digits, 1 uppercase letter.",
+  "category": "Identity",
+  "pattern": "[A-Z]{5}\\d{4}[A-Z]",
+  "flags": "",
+  "examples": ["ABCDE1234F", "PXPZJ1234A"],
+  "counterExamples": ["ABCDE12345", "abcde1234f", "ABCD1234F"],
+  "locales": ["en-IN"],
+  "tags": ["pan", "india", "indian", "tax", "identity"],
+  "useCases": ["Indian tax forms", "KYC for Indian users", "Banking integrations"],
+  "seoTitle": "Indian PAN Card Regex — Validate PAN Numbers",
+  "seoDescription": "Regex for Indian PAN card number validation."
+}

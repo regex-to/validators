@@ -1,0 +1,15 @@
+{
+  "slug": "phone-us",
+  "name": "Phone — US",
+  "description": "Matches a US phone number in various formats: (555) 867-5309, 555-867-5309, 5558675309, or with +1 country code.",
+  "category": "Phone",
+  "pattern": "(\\+1[\\s\\-]?)?\\(?\\d{3}\\)?[\\s\\-]?\\d{3}[\\s\\-]?\\d{4}",
+  "flags": "",
+  "examples": ["(555) 867-5309", "555-867-5309", "+1 555 867 5309", "5558675309"],
+  "counterExamples": ["+44 20 7183 8750", "123-456-789", "555-867-530"],
+  "locales": ["en-US"],
+  "tags": ["phone", "us", "american", "mobile"],
+  "useCases": ["US contact forms", "Customer registration", "Address books"],
+  "seoTitle": "US Phone Regex — Validate American Phone Numbers",
+  "seoDescription": "Regex for US phone number validation supporting multiple formats."
+}

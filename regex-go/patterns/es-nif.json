@@ -1,0 +1,15 @@
+{
+  "slug": "es-nif",
+  "name": "Spanish NIF / DNI",
+  "description": "Matches a Spanish National Identity Document number (NIF/DNI) — 8 digits followed by a letter, or an NIE starting with X, Y, or Z.",
+  "category": "Identity",
+  "pattern": "[0-9XYZ]\\d{7}[A-HJ-NP-TV-Z]",
+  "flags": "i",
+  "examples": ["12345678Z", "X1234567L", "Y0000000T"],
+  "counterExamples": ["1234567Z", "123456789Z", "12345678I"],
+  "locales": ["es"],
+  "tags": ["nif", "dni", "nie", "spain", "spanish", "identity"],
+  "useCases": ["Spanish government forms", "Bank KYC", "Online identity verification"],
+  "seoTitle": "Spanish NIF/DNI Regex — Validate Spanish ID Numbers",
+  "seoDescription": "Regex for Spanish NIF, DNI and NIE number validation."
+}

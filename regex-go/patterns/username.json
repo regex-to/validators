@@ -1,0 +1,14 @@
+{
+  "slug": "username",
+  "name": "Username",
+  "description": "Matches a valid username: 3–20 characters, letters, digits, hyphens, and underscores. No leading/trailing hyphens or underscores.",
+  "category": "Social",
+  "pattern": "[a-zA-Z0-9](?:[a-zA-Z0-9_\\-]{1,18}[a-zA-Z0-9])?",
+  "flags": "",
+  "examples": ["john_doe", "user-123", "alice", "web_dev_42"],
+  "counterExamples": ["-john", "john-", "_user", "a", "this_username_is_way_too_long_for_any_system"],
+  "tags": ["username", "user", "handle", "login"],
+  "useCases": ["User registration", "Social media handles", "API key naming"],
+  "seoTitle": "Username Regex — Validate Usernames in JS, Go, PHP",
+  "seoDescription": "Regex for username validation: alphanumeric, hyphens, underscores, 3–20 chars."
+}

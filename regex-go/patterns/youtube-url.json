@@ -1,0 +1,14 @@
+{
+  "slug": "youtube-url",
+  "name": "YouTube Video URL",
+  "description": "Matches a YouTube video URL in both youtube.com/watch?v= and youtu.be/ formats and extracts the 11-character video ID.",
+  "category": "Internet",
+  "pattern": "(?:https?:\\/\\/)?(?:www\\.)?(?:youtube\\.com\\/watch\\?v=|youtu\\.be\\/)([a-zA-Z0-9_\\-]{11})",
+  "flags": "i",
+  "examples": ["https://www.youtube.com/watch?v=dQw4w9WgXcQ", "youtu.be/dQw4w9WgXcQ", "youtube.com/watch?v=dQw4w9WgXcQ"],
+  "counterExamples": ["https://vimeo.com/123456", "https://youtube.com/", "youtu.be/short"],
+  "tags": ["youtube", "video", "url", "embed", "social"],
+  "useCases": ["Video embed parsers", "Content aggregators", "Link preview generation"],
+  "seoTitle": "YouTube URL Regex — Extract Video IDs in JS, Go, PHP",
+  "seoDescription": "Regex for YouTube URL parsing and video ID extraction."
+}

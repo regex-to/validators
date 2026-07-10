@@ -1,0 +1,15 @@
+{
+  "slug": "us-zip",
+  "name": "US ZIP Code",
+  "description": "Matches a US ZIP code in 5-digit or ZIP+4 (5-4) format.",
+  "category": "Address",
+  "pattern": "\\d{5}(-\\d{4})?",
+  "flags": "",
+  "examples": ["90210", "10001-1234", "00501"],
+  "counterExamples": ["1234", "123456", "9021A"],
+  "locales": ["en-US"],
+  "tags": ["zip", "postal", "us", "address", "american"],
+  "useCases": ["US address forms", "Shipping validation", "Geographic targeting"],
+  "seoTitle": "US ZIP Code Regex — Validate ZIP Codes in JS, Go, PHP",
+  "seoDescription": "Regex for US ZIP code validation. Supports 5-digit and ZIP+4 formats."
+}

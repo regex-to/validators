@@ -1,0 +1,5 @@
+- [x] Create regex fuzzer library (`regexFuzzer.ts`)
+- [x] Create regex verbose formatter library (`regexFormatter.ts`)
+- [x] Update `RegexWorkspace.tsx` to include "Auto-Generate Test Cases" button
+- [x] Update `RegexWorkspace.tsx` to include "Verbose Formatter" button
+- [x] Verify build and functionality

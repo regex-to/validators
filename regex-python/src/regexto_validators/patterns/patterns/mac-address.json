@@ -1,0 +1,14 @@
+{
+  "slug": "mac-address",
+  "name": "MAC Address",
+  "description": "Matches a MAC (Media Access Control) address in both colon-separated and hyphen-separated formats.",
+  "category": "Network",
+  "pattern": "([0-9a-fA-F]{2}[:\\-]){5}[0-9a-fA-F]{2}",
+  "flags": "i",
+  "examples": ["00:1A:2B:3C:4D:5E", "00-1A-2B-3C-4D-5E", "ff:ff:ff:ff:ff:ff"],
+  "counterExamples": ["00:1A:2B:3C:4D", "GG:HH:II:JJ:KK:LL", "001A2B3C4D5E"],
+  "tags": ["mac", "network", "hardware", "address"],
+  "useCases": ["Network device identification", "Access control lists", "Device registration"],
+  "seoTitle": "MAC Address Regex — Validate MAC in JS, Go, PHP",
+  "seoDescription": "Regex for MAC address validation supporting both colon and hyphen separators."
+}

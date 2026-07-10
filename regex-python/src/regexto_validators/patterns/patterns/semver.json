@@ -1,0 +1,14 @@
+{
+  "slug": "semver",
+  "name": "Semantic Version",
+  "description": "SemVer 2.0 compliant version string including optional pre-release and build metadata.",
+  "category": "Dev",
+  "pattern": "(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)(?:-(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*)?(?:\\+[0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*)?",
+  "flags": "",
+  "examples": ["1.0.0", "2.3.4-alpha.1", "1.0.0+build.1", "0.1.0-beta"],
+  "counterExamples": ["1.0", "v1.0.0", "1.0.0.0", "latest"],
+  "tags": ["semver", "version", "npm", "development", "ci"],
+  "useCases": ["Package version validation", "CI/CD pipeline checks", "Changelog automation"],
+  "seoTitle": "SemVer Regex — Validate Semantic Versions in JS, Go, PHP",
+  "seoDescription": "SemVer 2.0 regex pattern for validating package version strings. Generate unit tests and code for JavaScript, Go, PHP."
+}

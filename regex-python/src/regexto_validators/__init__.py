@@ -38,11 +38,10 @@ def get_regex(slug: str) -> re.Pattern:
             flags_prefix += char
     
     pattern_str = data["pattern"]
-    if flags_prefix:
-        pattern_str = f"(?{flags_prefix})" + pattern_str
-        
     # Wrap in ^(?: ... )$ for exact full-string match
     pattern_str = f"^(?:{pattern_str})$"
+    if flags_prefix:
+        pattern_str = f"(?{flags_prefix})" + pattern_str
 
     compiled_re = re.compile(pattern_str)
     _cache[slug] = compiled_re

@@ -1,0 +1,14 @@
+{
+  "slug": "phone-e164",
+  "name": "Phone — E.164 International",
+  "description": "Matches an international phone number in E.164 format: + followed by country code and subscriber number (max 15 digits total).",
+  "category": "Phone",
+  "pattern": "\\+[1-9]\\d{1,14}",
+  "flags": "",
+  "examples": ["+14155552671", "+442071838750", "+48123456789", "+33612345678"],
+  "counterExamples": ["+0123456789", "14155552671", "+1", "+12345678901234567"],
+  "tags": ["phone", "e164", "international", "mobile"],
+  "useCases": ["International phone validation", "SMS gateways", "Two-factor authentication"],
+  "seoTitle": "E.164 Phone Regex — International Phone Number Validation",
+  "seoDescription": "Regex for E.164 international phone number format. Works globally."
+}

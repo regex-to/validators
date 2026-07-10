@@ -1,0 +1,14 @@
+{
+  "slug": "hex-color",
+  "name": "Hex Color",
+  "description": "CSS hex color code in #RGB or #RRGGBB format (case-insensitive).",
+  "category": "Web",
+  "pattern": "#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})",
+  "flags": "",
+  "examples": ["#fff", "#FFF", "#a3B2c1", "#000000", "#FF5733"],
+  "counterExamples": ["#gggggg", "#12345", "fff", "rgb(255,0,0)"],
+  "tags": ["color", "css", "hex", "web", "frontend", "design"],
+  "useCases": ["CSS preprocessor tooling", "Design token validation", "Color picker inputs"],
+  "seoTitle": "Hex Color Regex — Validate CSS Hex Colors in JS, Go, PHP",
+  "seoDescription": "Regex pattern for validating CSS hex color codes (#RGB and #RRGGBB). Generate code for JavaScript, TypeScript, Go, PHP."
+}

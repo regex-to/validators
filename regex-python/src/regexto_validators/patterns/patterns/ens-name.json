@@ -1,0 +1,14 @@
+{
+  "slug": "ens-name",
+  "name": "ENS Name (Ethereum Name Service)",
+  "description": "Matches an Ethereum Name Service domain — alphanumeric label(s) ending with .eth.",
+  "category": "Crypto",
+  "pattern": "[a-z0-9][a-z0-9\\-]{1,61}[a-z0-9]\\.eth",
+  "flags": "i",
+  "examples": ["vitalik.eth", "my-wallet.eth", "regex.eth"],
+  "counterExamples": ["-invalid.eth", "a.eth", "vitalik.com", "vitalik.ETH2"],
+  "tags": ["ens", "ethereum", "domain", "web3", "naming"],
+  "useCases": ["Web3 profile lookup", "Wallet address resolution", "ENS search"],
+  "seoTitle": "ENS Name Regex — Validate .eth Domains",
+  "seoDescription": "Regex for Ethereum Name Service (ENS) .eth domain validation."
+}

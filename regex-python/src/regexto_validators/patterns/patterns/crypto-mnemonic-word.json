@@ -1,0 +1,17 @@
+{
+  "slug": "crypto-mnemonic-word",
+  "name": "BIP-39 Mnemonic Phrase",
+  "description": "Matches a BIP-39 mnemonic seed phrase — 12, 15, 18, 21, or 24 lowercase English words separated by single spaces.",
+  "category": "Crypto",
+  "pattern": "^([a-z]+\\s){11,23}[a-z]+$",
+  "flags": "",
+  "examples": [
+    "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+    "zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo wrong"
+  ],
+  "counterExamples": ["abandon abandon", "ABANDON ABANDON ABANDON", "abandon  double-space"],
+  "tags": ["bip39", "mnemonic", "seed", "wallet", "crypto", "recovery"],
+  "useCases": ["Wallet backup verification", "Seed phrase format validation", "Crypto onboarding"],
+  "seoTitle": "BIP-39 Mnemonic Regex — Validate Seed Phrases",
+  "seoDescription": "Regex for BIP-39 mnemonic seed phrase format validation (12–24 words)."
+}

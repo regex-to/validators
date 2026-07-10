@@ -1,0 +1,14 @@
+{
+  "slug": "ipv6",
+  "name": "IPv6 Address",
+  "description": "Matches a full-form IPv6 address with 8 groups of 4 hexadecimal digits separated by colons.",
+  "category": "Network",
+  "pattern": "([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}",
+  "flags": "i",
+  "examples": ["2001:0db8:85a3:0000:0000:8a2e:0370:7334", "fe80:0000:0000:0000:0204:61ff:fe9d:f156"],
+  "counterExamples": ["192.168.1.1", "::1", "2001:db8::1"],
+  "tags": ["ipv6", "network", "internet", "address"],
+  "useCases": ["Network configuration validation", "Firewall rules", "API input sanitization"],
+  "seoTitle": "IPv6 Address Regex — Validate IPv6 in JS, Go, PHP",
+  "seoDescription": "Regex for IPv6 address validation. Generate code for JavaScript, TypeScript (Zod), Go, and PHP with unit tests."
+}

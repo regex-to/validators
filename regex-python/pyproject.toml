@@ -23,5 +23,4 @@ packages = ["src/regexto_validators"]
 [tool.hatch.build.targets.sdist]
 include = [
     "src/regexto_validators",
-    "patterns",
 ]

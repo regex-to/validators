@@ -1,0 +1,14 @@
+{
+  "slug": "bitcoin-address",
+  "name": "Bitcoin Address (Legacy)",
+  "description": "Matches a legacy Bitcoin address — P2PKH (starting with 1) or P2SH (starting with 3), 25–34 Base58 characters.",
+  "category": "Crypto",
+  "pattern": "[13][a-km-zA-HJ-NP-Z1-9]{25,34}",
+  "flags": "",
+  "examples": ["1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2", "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy"],
+  "counterExamples": ["0BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2", "1BvBMSEYstWetq", "1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2_extra"],
+  "tags": ["bitcoin", "btc", "crypto", "address", "blockchain"],
+  "useCases": ["Crypto payment validation", "Wallet address input", "Transaction verification"],
+  "seoTitle": "Bitcoin Address Regex — Validate BTC Addresses",
+  "seoDescription": "Regex for Bitcoin legacy address validation (P2PKH and P2SH)."
+}

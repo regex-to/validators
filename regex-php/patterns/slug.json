@@ -1,0 +1,14 @@
+{
+  "slug": "slug",
+  "name": "URL Slug",
+  "description": "Valid URL slug — lowercase alphanumeric characters separated by single hyphens, no leading or trailing hyphens.",
+  "category": "Web",
+  "pattern": "[a-z0-9]+(?:-[a-z0-9]+)*",
+  "flags": "",
+  "examples": ["my-blog-post", "hello", "article-123", "regex-to"],
+  "counterExamples": ["My-Post", "-starts-with-hyphen", "ends-with-hyphen-", "has--double"],
+  "tags": ["slug", "url", "web", "cms", "seo"],
+  "useCases": ["CMS permalink generation", "URL route validation", "SEO slug sanitization"],
+  "seoTitle": "URL Slug Regex — Validate URL Slugs in JS, Go, PHP",
+  "seoDescription": "Regex for validating URL slugs (lowercase, hyphens, alphanumeric). Generate code for JavaScript, Go, and PHP."
+}

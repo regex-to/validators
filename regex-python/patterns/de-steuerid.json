@@ -1,0 +1,15 @@
+{
+  "slug": "de-steuerid",
+  "name": "German Tax ID (Steuer-IdNr)",
+  "description": "Matches a German personal tax identification number (Steuerliche Identifikationsnummer) — 11 digits, first digit 1–9.",
+  "category": "Identity",
+  "pattern": "[1-9]\\d{10}",
+  "flags": "",
+  "examples": ["12345678901", "98765432109"],
+  "counterExamples": ["0123456789", "1234567890", "1234567890A"],
+  "locales": ["de"],
+  "tags": ["steuerid", "germany", "german", "tax", "identity"],
+  "useCases": ["German tax forms", "Payroll systems", "ELSTER integration"],
+  "seoTitle": "German Tax ID Regex — Validate Steuer-IdNr",
+  "seoDescription": "Regex for German personal tax identification number (Steuer-IdNr) validation."
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "lightning-invoice",
+  "name": "Lightning Network Invoice (BOLT-11)",
+  "description": "Matches a Bitcoin Lightning Network payment invoice in BOLT-11 format — starts with lnbc, lntb, or lnbcrt.",
+  "category": "Crypto",
+  "pattern": "ln(bc|tb|bcrt)\\d*[munp]?[a-z0-9]+",
+  "flags": "i",
+  "examples": [
+    "lnbc1pvjluezpp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqypqdpl2pkx2ctnv5sxxmmwwd5kgetjypeh2ursdae8g6twvus8g6rfwvs8qun0dfjkxaqfppnqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqppnqqq",
+    "lntb100n1..."
+  ],
+  "counterExamples": ["bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq", "not-an-invoice", "lnxx123"],
+  "tags": ["lightning", "bitcoin", "bolt11", "invoice", "payment", "crypto"],
+  "useCases": ["Lightning payment validation", "Wallet apps", "Bitcoin point-of-sale"],
+  "seoTitle": "Lightning Invoice Regex — Validate BOLT-11 Invoices",
+  "seoDescription": "Regex for Bitcoin Lightning Network BOLT-11 invoice format validation."
+}

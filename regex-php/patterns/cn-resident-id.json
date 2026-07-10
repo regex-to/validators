@@ -1,0 +1,15 @@
+{
+  "slug": "cn-resident-id",
+  "name": "Chinese Resident ID",
+  "description": "Matches a Chinese national resident identity card number — 17 digits followed by one digit or X (checksum digit).",
+  "category": "Identity",
+  "pattern": "\\d{17}[\\dXx]",
+  "flags": "",
+  "examples": ["11010519491231002X", "440301198001012158"],
+  "counterExamples": ["11010519491231002", "1101051949123100200", "1101051949123100Y"],
+  "locales": ["zh-CN"],
+  "tags": ["china", "chinese", "resident-id", "identity", "idcard"],
+  "useCases": ["Chinese government integration", "KYC for Chinese users", "Travel booking"],
+  "seoTitle": "Chinese Resident ID Regex — Validate 身份证号",
+  "seoDescription": "Regex for Chinese national resident identity card number (18 characters) validation."
+}

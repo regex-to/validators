@@ -1,0 +1,15 @@
+{
+  "slug": "de-plz",
+  "name": "German Postal Code (PLZ)",
+  "description": "Matches a German postal code (Postleitzahl / PLZ) — exactly 5 digits.",
+  "category": "Address",
+  "pattern": "\\d{5}",
+  "flags": "",
+  "examples": ["10115", "80331", "20095", "01067"],
+  "counterExamples": ["1234", "123456", "A1234"],
+  "locales": ["de"],
+  "tags": ["plz", "postal", "germany", "german", "address"],
+  "useCases": ["German address forms", "Delivery validation", "Tax region determination"],
+  "seoTitle": "German PLZ Regex — Validate German Postal Codes",
+  "seoDescription": "Regex for German postal code (PLZ) validation — 5 digits."
+}

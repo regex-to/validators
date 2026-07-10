@@ -1,0 +1,17 @@
+{
+  "slug": "ipfs-cid",
+  "name": "IPFS CID",
+  "description": "Matches an IPFS Content Identifier (CIDv0 starting with Qm, or CIDv1 starting with bafy/bafk).",
+  "category": "Crypto",
+  "pattern": "(Qm[1-9A-HJ-NP-Za-km-z]{44}|b[a-z2-7]{58,})",
+  "flags": "",
+  "examples": [
+    "QmZ4tDuvesekSs4qM5ZBKpXiZGun7S2CYtEZRB3DYXkjGx",
+    "bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi"
+  ],
+  "counterExamples": ["not-a-cid", "Qm1234", "0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe"],
+  "tags": ["ipfs", "cid", "content-address", "decentralized", "web3", "storage"],
+  "useCases": ["IPFS gateway links", "NFT metadata validation", "Decentralized storage"],
+  "seoTitle": "IPFS CID Regex — Validate IPFS Content Identifiers",
+  "seoDescription": "Regex for IPFS CIDv0 (Qm...) and CIDv1 (bafy...) content identifier validation."
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "iso-date",
+  "name": "ISO 8601 Date",
+  "description": "ISO 8601 date format (YYYY-MM-DD) with month and day range validation.",
+  "category": "Date & Time",
+  "pattern": "\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])",
+  "flags": "",
+  "examples": ["2024-01-15", "1999-12-31", "2000-02-29"],
+  "counterExamples": ["2024-13-01", "01-01-2024", "2024/01/15", "20240115"],
+  "tags": ["date", "iso", "time", "datetime", "8601"],
+  "useCases": ["API date field validation", "Database date input parsing", "Log timestamp parsing"],
+  "seoTitle": "ISO Date Regex — Validate ISO 8601 Dates in JS, Go, PHP",
+  "seoDescription": "ISO 8601 date regex (YYYY-MM-DD) for JavaScript, TypeScript, Go, and PHP. Includes month and day range checking."
+}

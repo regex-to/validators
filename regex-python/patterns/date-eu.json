@@ -1,0 +1,14 @@
+{
+  "slug": "date-eu",
+  "name": "Date (European Format)",
+  "description": "Matches a European-style date in DD/MM/YYYY, DD.MM.YYYY, or DD-MM-YYYY format.",
+  "category": "Date & Time",
+  "pattern": "(0?[1-9]|[12]\\d|3[01])[.\\-\\/](0?[1-9]|1[0-2])[.\\-\\/](\\d{4})",
+  "flags": "",
+  "examples": ["15/01/2024", "31.12.1999", "7-3-2024"],
+  "counterExamples": ["01/13/2024", "00/15/2024", "2024/01/15"],
+  "tags": ["date", "european", "dd/mm/yyyy", "eu"],
+  "useCases": ["European forms", "Date input validation", "Localized apps"],
+  "seoTitle": "European Date Format Regex — Validate DD/MM/YYYY in JS, Go, PHP",
+  "seoDescription": "Regex for European date DD/MM/YYYY, DD.MM.YYYY, DD-MM-YYYY formats."
+}

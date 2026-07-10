@@ -1,0 +1,15 @@
+{
+  "slug": "us-ein",
+  "name": "US Employer Identification Number (EIN)",
+  "description": "Matches a US EIN (Federal Tax ID) in the NN-NNNNNNN format used by the IRS.",
+  "category": "Identity",
+  "pattern": "\\d{2}-\\d{7}",
+  "flags": "",
+  "examples": ["12-3456789", "99-9999999", "01-0000001"],
+  "counterExamples": ["123-456789", "1-23456789", "12-345678"],
+  "locales": ["en-US"],
+  "tags": ["ein", "us", "tax", "employer", "irs", "federal"],
+  "useCases": ["Business tax forms", "Contractor onboarding", "Invoice validation"],
+  "seoTitle": "US EIN Regex — Validate Employer Identification Numbers",
+  "seoDescription": "Regex for US EIN (Federal Tax ID) format validation."
+}

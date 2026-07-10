@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::sync::RwLock;
 
-static PATTERNS_DIR: Dir = include_dir!("$CARGO_MANIFEST_DIR/../patterns");
+static PATTERNS_DIR: Dir = include_dir!("$CARGO_MANIFEST_DIR/patterns");
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]

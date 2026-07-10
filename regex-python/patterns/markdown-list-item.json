@@ -1,0 +1,14 @@
+{
+  "slug": "markdown-list-item",
+  "name": "Markdown List Item",
+  "description": "Matches Markdown unordered list items starting with -, *, or + and ordered items starting with a number.",
+  "category": "Markdown",
+  "pattern": "^(\\s*)([-*+]|\\d+\\.)\\s+(.+)$",
+  "flags": "m",
+  "examples": ["- item one", "* item two", "+ item three", "1. first item", "  - nested item"],
+  "counterExamples": ["Not a list", "-no space", "* "],
+  "tags": ["markdown", "list", "ul", "ol", "bullet"],
+  "useCases": ["Markdown parsers", "Task list extraction", "Content processors"],
+  "seoTitle": "Markdown List Item Regex — Parse Lists in JS, Go, PHP",
+  "seoDescription": "Regex for Markdown list item detection (unordered and ordered)."
+}

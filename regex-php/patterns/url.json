@@ -1,0 +1,14 @@
+{
+  "slug": "url",
+  "name": "URL (HTTP/HTTPS)",
+  "description": "Validates HTTP and HTTPS URLs including subdomains, paths, query strings, and anchors.",
+  "category": "Internet",
+  "pattern": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_+.~#?&\\/=]*)",
+  "flags": "i",
+  "examples": ["https://example.com", "http://sub.domain.co/path?q=1#anchor", "https://regex.to"],
+  "counterExamples": ["ftp://example.com", "not-a-url", "//missing-protocol.com"],
+  "tags": ["url", "internet", "link", "http", "https", "web"],
+  "useCases": ["Link validation", "CMS content sanitization", "API endpoint validation"],
+  "seoTitle": "URL Regex — Validate HTTP/HTTPS URLs in JS, Go, PHP",
+  "seoDescription": "Validate HTTP and HTTPS URLs with this regex. Generate ready-to-use code for JavaScript, TypeScript, Go, PHP with unit tests."
+}

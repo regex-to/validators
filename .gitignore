@@ -1,0 +1,29 @@
+# IDE and OS files
+.DS_Store
+.idea/
+.vscode/
+
+# Rust build artifacts
+regex-rust/target/
+**/target/
+
+# PHP dependencies
+regex-php/vendor/
+**/vendor/
+
+# Node/NPM dependencies & builds
+node_modules/
+**/node_modules/
+.next/
+**/.next/
+out/
+**/out/
+*.tsbuildinfo
+
+# Python build & virtualenvs
+.venv/
+**/__pycache__/
+**/*.pyc
+regex-python/dist/
+regex-python/build/
+regex-python/src/regexto_validators.egg-info/

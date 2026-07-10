@@ -53,12 +53,9 @@ class Validator
     {
         $data = self::getPatternData($slug);
         
-        // Construct the PHP regex: /pattern/flags
-        // Escape delimiters if they are present in the pattern
-        $pattern = str_replace('/', '\/', $data['pattern']);
-        
         // Wrap the pattern in ^(?: ... )$ to strictly enforce a full-string match
-        $regex = '/^(?:' . $pattern . ')$/' . $data['flags'];
+        // Use chr(1) as delimiter to avoid any collision with characters inside patterns (e.g. /, ~, #)
+        $regex = chr(1) . '^(?:' . $data['pattern'] . ')$' . chr(1) . $data['flags'];
         
         return preg_match($regex, $input) === 1;
     }
@@ -68,8 +65,7 @@ class Validator
     public static function test(string $slug, string $input): bool
     {
         $data = self::getPatternData($slug);
-        $pattern = str_replace('/', '\/', $data['pattern']);
-        $regex = '/' . $pattern . '/' . $data['flags'];
+        $regex = chr(1) . $data['pattern'] . chr(1) . $data['flags'];
         
         return preg_match($regex, $input) === 1;
     }

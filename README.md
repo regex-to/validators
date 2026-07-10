@@ -4,9 +4,12 @@
 
 **All patterns are open-source, fully tested, and visualized live on [regex.to](https://regex.to).**
 
-[![npm version](https://img.shields.io/npm/v/@regexto/validators?color=brightgreen)](https://www.npmjs.com/package/@regexto/validators)
-[![license](https://img.shields.io/npm/l/@regexto/validators)](https://github.com/regex-to/validators/blob/main/LICENSE)
-[![Tested & Visualized Live](https://img.shields.io/badge/Tested%20%26%20Visualized-Live%20on%20regex.to-blueviolet)](https://regex.to)
+[![npm](https://img.shields.io/npm/v/@regexto/validators?color=orange&label=NPM)](https://www.npmjs.com/package/@regexto/validators)
+[![pypi](https://img.shields.io/pypi/v/regexto-validators?color=blue&label=PyPI)](https://pypi.org/project/regexto-validators/)
+[![crates.io](https://img.shields.io/crates/v/regexto-validators?color=crimson&label=Crates.io)](https://crates.io/crates/regexto-validators)
+[![packagist](https://img.shields.io/packagist/v/regexto/validators?color=purple&label=Packagist)](https://packagist.org/packages/regexto/validators)
+[![pkg.go.dev](https://img.shields.io/badge/go-reference-00ADD8?logo=go&logoColor=white)](https://pkg.go.dev/github.com/regex-to/validators-go)
+[![Tested & Visualized Live](https://img.shields.io/badge/regex.to-sandbox-blueviolet)](https://regex.to)
 
 ---
 

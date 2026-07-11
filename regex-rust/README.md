@@ -28,7 +28,7 @@ Add the dependency to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-regexto-validators = { git = "https://github.com/regex-to/validators-rust" }
+regexto-validators = { git = "https://github.com/regex-to/regex-rust" }
 ```
 
 ---

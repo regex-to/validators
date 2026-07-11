@@ -5,7 +5,7 @@ edition = "2021"
 authors = ["Lukasz Oleniuk <lukasz@oleniuk.pl>"]
 description = "A zero-dependency collection of battle-tested regex patterns for Rust, backed by regex.to."
 license = "MIT"
-repository = "https://github.com/regex-to/validators-rust"
+repository = "https://github.com/regex-to/regex-rust"
 
 [dependencies]
 fancy-regex = "0.13"

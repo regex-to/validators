@@ -1,0 +1,23 @@
+{
+  "slug": "mongodb-uri",
+  "name": "MongoDB Connection URI",
+  "description": "Validates MongoDB connection strings, supporting both standard 'mongodb://' and DNS-seedlist 'mongodb+srv://' protocols.",
+  "category": "Database",
+  "pattern": "mongodb(?:\\+srv)?:\\/\\/(?:[a-zA-Z0-9-_]+:[a-zA-Z0-9-_]+@)?[a-zA-Z0-9.-]+(?::\\d+)?(?:\\/[a-zA-Z0-9-_]+)?(?:\\?.+)?",
+  "flags": "",
+  "examples": [
+    "mongodb://localhost:27017",
+    "mongodb+srv://user:pass@cluster.mongodb.net/dbname?retryWrites=true",
+    "mongodb://admin:secret@127.0.0.1:27017/admin"
+  ],
+  "counterExamples": [
+    "mysql://localhost:3306",
+    "mongodb://",
+    "mongodb+srv://user@pass@cluster.mongodb.net",
+    "mongodb:/localhost"
+  ],
+  "tags": ["mongodb", "database", "connection-string", "uri", "devops"],
+  "useCases": ["App config validation", "Database connector forms", "DevOps orchestration tools"],
+  "seoTitle": "MongoDB URI Regex — Validate MongoDB Connection Strings in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating MongoDB connection URIs. Generate code for JavaScript, Go, Rust, PHP, and Python."
+}

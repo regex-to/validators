@@ -1,0 +1,24 @@
+{
+  "slug": "conventional-commit",
+  "name": "Conventional Commit Message",
+  "description": "Validates git commit messages adhering to the Conventional Commits specification.",
+  "category": "Dev Tools",
+  "pattern": "(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(?:\\([a-zA-Z0-9_-]+\\))?!?: .{1,100}",
+  "flags": "",
+  "examples": [
+    "feat(auth): add login page",
+    "fix!: resolve database deadlock",
+    "chore: bump package version to 1.0.1",
+    "docs(readme): add installation guide"
+  ],
+  "counterExamples": [
+    "add login page",
+    "fixed bugs",
+    "feat(): missing scope content",
+    "fix(scope):"
+  ],
+  "tags": ["conventional-commits", "commit", "git", "ci", "workflow"],
+  "useCases": ["Git hook message validation", "CI release automation gates", "Developer workflow enforcement"],
+  "seoTitle": "Conventional Commit Regex — Validate Git Commits in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating conventional commit messages. Generate code for JavaScript, Go, Rust, PHP, and Python."
+}

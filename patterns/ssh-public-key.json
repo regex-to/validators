@@ -1,0 +1,23 @@
+{
+  "slug": "ssh-public-key",
+  "name": "SSH Public Key",
+  "description": "Validates SSH public keys, supporting common algorithms like ssh-rsa, ssh-ed25519, ssh-dss, and ecdsa variants.",
+  "category": "Security",
+  "pattern": "(ssh-rsa|ssh-dss|ssh-ed25519|ecdsa-sha2-nistp256|ecdsa-sha2-nistp384|ecdsa-sha2-nistp521)\\s+[A-Za-z0-9+/=]+(?:\\s+.+)?",
+  "flags": "",
+  "examples": [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJK1234567890 user@hostname",
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQc12345==",
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQ33=="
+  ],
+  "counterExamples": [
+    "ssh-rsa invalid_characters_here",
+    "just-text",
+    "ssh-rsa",
+    "ssh-ed25519 "
+  ],
+  "tags": ["ssh", "public-key", "security", "git", "auth"],
+  "useCases": ["SaaS git integrations", "DevOps server provisioning profile", "User security profile settings"],
+  "seoTitle": "SSH Public Key Regex — Validate SSH Keys in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating SSH public keys. Generate code for JavaScript, Go, Rust, PHP, and Python."
+}

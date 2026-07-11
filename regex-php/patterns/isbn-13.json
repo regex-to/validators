@@ -1,0 +1,23 @@
+{
+  "slug": "isbn-13",
+  "name": "ISBN-13",
+  "description": "Validates 13-digit International Standard Book Numbers (ISBN-13) with optional hyphens or spaces.",
+  "category": "Content",
+  "pattern": "(?:978|979)[- ]?\\d{1,5}[- ]?\\d{1,7}[- ]?\\d{1,7}[- ]?\\d{1}",
+  "flags": "",
+  "examples": [
+    "978-3-16-148410-0",
+    "9798650893322",
+    "978 0 596 52068 7"
+  ],
+  "counterExamples": [
+    "123-4-56-789012-3",
+    "978-3-16-148410-01",
+    "978-3-16",
+    "abc-d-ef-ghijkl-m"
+  ],
+  "tags": ["isbn", "isbn-13", "book", "publishing", "commerce"],
+  "useCases": ["E-commerce book catalog validation", "Library catalog systems", "Publisher portal uploads"],
+  "seoTitle": "ISBN-13 Regex — Validate ISBN Numbers in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating ISBN-13 book numbers. Generate code for JavaScript, Go, Rust, PHP, and Python."
+}

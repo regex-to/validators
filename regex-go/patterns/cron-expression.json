@@ -1,0 +1,24 @@
+{
+  "slug": "cron-expression",
+  "name": "Cron Expression",
+  "description": "Validates cron schedule expressions (5 fields: minute, hour, day of month, month, day of week) structurally.",
+  "category": "Dev Tools",
+  "pattern": "(?:(?:\\*|\\d+(?:-\\d+)?)(?:\\/\\d+)?(?:,(?:\\*|\\d+(?:-\\d+)?)(?:\\/\\d+)?)*\\s+){4}(?:\\*|\\d+(?:-\\d+)?)(?:\\/\\d+)?(?:,(?:\\*|\\d+(?:-\\d+)?)(?:\\/\\d+)?)*",
+  "flags": "",
+  "examples": [
+    "* * * * *",
+    "*/5 10-12 * * *",
+    "0,30 18-23 * * 1-5",
+    "0 0 1 1 *"
+  ],
+  "counterExamples": [
+    "* * * * * * * *",
+    "invalid-cron-expr",
+    "* * * *",
+    "a * * * *"
+  ],
+  "tags": ["cron", "schedule", "task", "job", "devops"],
+  "useCases": ["Task scheduling validation", "Cron job UI inputs", "SaaS automation rules"],
+  "seoTitle": "Cron Expression Regex — Validate Cron Schedules in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating cron schedule expressions. Generate code for JavaScript, Go, Rust, PHP, and Python."
+}

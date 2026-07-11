@@ -1,6 +1,6 @@
 {
   "name": "@regexto/validators",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A curated collection of battle-tested regex patterns with TypeScript types, Zod integration, and multi-language code generation.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -19,8 +19,17 @@
   },
   "files": [
     "dist",
-    "patterns"
+    "patterns",
+    "SECURITY.md",
+    "CONTRIBUTING.md"
   ],
+  "bugs": {
+    "url": "https://github.com/regex-to/validators/issues"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/regex-to"
+  },
   "scripts": {
     "prebuild": "rm -rf patterns && cp -R ../patterns ./patterns",
     "build": "tsup src/index.ts src/zod.ts --format cjs,esm --dts --clean --shims",

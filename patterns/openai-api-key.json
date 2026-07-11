@@ -1,0 +1,23 @@
+{
+  "slug": "openai-api-key",
+  "name": "OpenAI API Key",
+  "description": "Validates OpenAI API keys, specifically supporting the standard project keys starting with 'sk-proj-'.",
+  "category": "Dev Tools",
+  "pattern": "sk-proj-[a-zA-Z0-9]{40,100}",
+  "flags": "",
+  "examples": [
+    "sk-proj-aBcDeFgHiJkLmNoPqRsTuVwXyZ1234567890aBcDeFgH",
+    "sk-proj-12345678901234567890123456789012345678901234",
+    "sk-proj-AbCdEfGhIjKlMnOpQrStUvWxYz1234567890AbCdEfGhIjKlMnOpQrSt"
+  ],
+  "counterExamples": [
+    "sk-proj-short",
+    "sk-api-key",
+    "sk-proj-!invalid-characters!",
+    "sk-proj-with spaces inside the key 123"
+  ],
+  "tags": ["openai", "api", "key", "ai", "auth"],
+  "useCases": ["API billing key validation", "Backend auth config validation", "SaaS AI integrations"],
+  "seoTitle": "OpenAI API Key Regex — Validate OpenAI Project Keys in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating OpenAI project API keys. Generate code for JavaScript, Go, Rust, PHP, and Python."
+}

@@ -10,6 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Checkout NPM submodule repo
+        run: |
+          git submodule update --init --recursive 2>/dev/null || true
+          if [ ! -f "regex-npm/package.json" ]; then
+            rm -rf regex-npm
+            git clone https://github.com/regex-to/validators.git --branch main regex-npm || git clone https://github.com/regex-to/validators-npm.git regex-npm
+          fi
       - uses: actions/setup-node@v4
         with:
           node-version: 20

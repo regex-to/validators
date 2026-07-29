@@ -91,3 +91,29 @@ jobs:
           commit_message: "Mirror Go package from monorepo"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+
+  split-rust:
+    name: Monorepo Split Rust
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Prepare Rust Package
+        run: |
+          mkdir -p regex-rust/patterns
+          cp -r patterns/* regex-rust/patterns/
+      - name: Split and Push
+        uses: danharrin/monorepo-split-github-action@v2.3.0
+        with:
+          package_directory: 'regex-rust'
+          repository_organization: 'regex-to'
+          repository_name: 'regex-rust'
+          target_branch: 'main'
+          tag: ${{ github.ref_name }}
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_message: "Mirror Rust package from monorepo"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+

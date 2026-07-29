@@ -1,0 +1,24 @@
+{
+  "slug": "ca-sin",
+  "name": "Canadian SIN",
+  "description": "Validates Canadian Social Insurance Numbers (SIN): 9 digits optionally formatted as NNN-NNN-NNN.",
+  "category": "Identity",
+  "pattern": "[0-9]{3}[\\s\\-]?[0-9]{3}[\\s\\-]?[0-9]{3}",
+  "flags": "",
+  "examples": [
+    "046-454-286",
+    "046454286",
+    "123 456 789",
+    "900-000-000"
+  ],
+  "counterExamples": [
+    "12345678",
+    "1234567890",
+    "abc-def-ghi",
+    "046-454-28"
+  ],
+  "tags": ["sin", "canada", "ca", "identity", "social-insurance"],
+  "useCases": ["Canadian payroll systems", "Government service portals", "Tax form validation"],
+  "seoTitle": "Canadian SIN Regex — Validate Social Insurance Numbers in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating Canadian Social Insurance Numbers (SIN) in NNN-NNN-NNN format. Code snippets for JS, Go, Rust, PHP, and Python."
+}

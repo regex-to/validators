@@ -1,0 +1,24 @@
+{
+  "slug": "stripe-key",
+  "name": "Stripe API Key",
+  "description": "Validates Stripe publishable and secret API keys in both live and test modes.",
+  "category": "Finance",
+  "pattern": "(?:pk|sk|rk)_(?:live|test)_[a-zA-Z0-9]{20,99}",
+  "flags": "",
+  "examples": [
+    "pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "sk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "rk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "pk_test_abcdefghijklmnopqrstuvwxyz01234567"
+  ],
+  "counterExamples": [
+    "pk_staging_12345",
+    "api_key_abcdef123456",
+    "sk_test_short",
+    "pk_live_"
+  ],
+  "tags": ["stripe", "api-key", "payment", "finance", "secret"],
+  "useCases": ["Payment integration validation", "Secrets scanning in CI/CD", "Config file auditing"],
+  "seoTitle": "Stripe API Key Regex — Detect Stripe Keys in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating and detecting Stripe publishable and secret API keys (live and test). Generate code for JS, Go, Rust, PHP, and Python."
+}

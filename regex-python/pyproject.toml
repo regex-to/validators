@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "regexto-validators"
-version = "1.0.3"
+version = "1.0.4"
 authors = [
   { name="Lukasz Oleniuk", email="lukasz@oleniuk.pl" },
 ]

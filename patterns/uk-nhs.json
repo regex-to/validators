@@ -1,0 +1,24 @@
+{
+  "slug": "uk-nhs",
+  "name": "UK NHS Number",
+  "description": "Validates UK National Health Service (NHS) numbers: 10 digits optionally separated by spaces in groups of 3-3-4.",
+  "category": "Identity",
+  "pattern": "\\d{3}[\\s\\-]?\\d{3}[\\s\\-]?\\d{4}",
+  "flags": "",
+  "examples": [
+    "943 476 5919",
+    "9434765919",
+    "943-476-5919",
+    "485 777 3456"
+  ],
+  "counterExamples": [
+    "12345678",
+    "1234567890123",
+    "NHS-123-456",
+    "abc 123 4567"
+  ],
+  "tags": ["nhs", "uk", "health", "identity", "medical"],
+  "useCases": ["UK healthcare portal validation", "Patient management systems", "NHS app onboarding forms"],
+  "seoTitle": "UK NHS Number Regex — Validate NHS Numbers in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating UK NHS numbers (10-digit format with optional spaces). Code snippets for JavaScript, Go, Rust, PHP, and Python."
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "phone-de",
+  "name": "German Phone Number",
+  "description": "Validates German phone numbers in international (+49) and domestic (0) formats, with optional spaces, hyphens, or dots as separators.",
+  "category": "Phone",
+  "pattern": "(?:\\+49|0)[\\s.\\-]?(?:\\(\\d{1,5}\\)|\\d{1,5})[\\s.\\-]?\\d{1,9}(?:[\\s.\\-]\\d{1,9})*",
+  "flags": "",
+  "examples": [
+    "+49 30 12345678",
+    "+49-89-9876543",
+    "030 12345678",
+    "0176 12345678",
+    "+4930123456"
+  ],
+  "counterExamples": [
+    "12345678",
+    "+1 800 555 0100",
+    "+49",
+    "abcdefgh"
+  ],
+  "tags": ["phone", "germany", "de", "telephone", "mobile"],
+  "useCases": ["German checkout forms", "Contact directory validation", "EU compliance forms"],
+  "seoTitle": "German Phone Number Regex — Validate +49 Numbers in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating German phone numbers (landline and mobile) in international and domestic formats. Code snippets for JS, Go, Rust, PHP, Python."
+}

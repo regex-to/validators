@@ -15,7 +15,7 @@ jobs:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
       - name: Install Dependencies
-        run: cd regex-npm && npm ci
+        run: cd regex-npm && npm install
       - name: Publish to NPM
         run: cd regex-npm && npm publish
         env:

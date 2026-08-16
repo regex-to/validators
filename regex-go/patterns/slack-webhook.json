@@ -1,0 +1,21 @@
+{
+  "slug": "slack-webhook",
+  "name": "Slack Incoming Webhook URL",
+  "description": "Validates Slack incoming webhook URLs (https://hooks.slack.com/services/T.../B.../...).",
+  "category": "Security",
+  "pattern": "https:\\/\\/hooks\\.slack\\.com\\/services\\/T[a-zA-Z0-9_]{8,11}\\/B[a-zA-Z0-9_]{8,11}\\/[a-zA-Z0-9_]{24}",
+  "flags": "",
+  "examples": [
+    "https://hooks.slack.com/services/T00000000/B00000000/EXAMPLE_SLACK_WEBHOOK_24",
+    "https://hooks.slack.com/services/T123456789/B987654321/EXAMPLE_SLACK_WEBHOOK_24"
+  ],
+  "counterExamples": [
+    "https://hooks.slack.com/services/invalid",
+    "http://hooks.slack.com/services/T00000000/B00000000/EXAMPLE_SLACK_WEBHOOK_24",
+    "https://discord.com/api/webhooks/123/abc"
+  ],
+  "tags": ["slack", "webhook", "security", "api-key", "integration"],
+  "useCases": ["Secret scanner", "CI/CD credential validation", "Slack app integration"],
+  "seoTitle": "Slack Webhook URL Regex — Validate Slack Webhooks in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating Slack incoming webhook URLs. Generate code for JavaScript, Go, Rust, PHP, and Python."
+}

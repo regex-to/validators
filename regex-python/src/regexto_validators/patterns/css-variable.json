@@ -1,0 +1,24 @@
+{
+  "slug": "css-variable",
+  "name": "CSS Custom Property (Variable)",
+  "description": "Validates CSS custom property (variable) names starting with double dashes (--).",
+  "category": "Web",
+  "pattern": "--[a-zA-Z0-9_-]+",
+  "flags": "",
+  "examples": [
+    "--primary-color",
+    "--bg-500",
+    "--header_height",
+    "--font-size-base"
+  ],
+  "counterExamples": [
+    "-primary-color",
+    "primary-color",
+    "$primary-color",
+    "--"
+  ],
+  "tags": ["css", "variable", "custom-property", "frontend", "web"],
+  "useCases": ["CSS linter input validation", "Design system property parser", "Theme engine key validator"],
+  "seoTitle": "CSS Variable Regex — Validate Custom Properties in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating CSS custom property names. Generate code for JavaScript, Go, Rust, PHP, and Python."
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "aws-arn",
+  "name": "AWS ARN",
+  "description": "Validates Amazon Web Services ARNs (Amazon Resource Names) across all AWS services and partitions.",
+  "category": "Cloud",
+  "pattern": "arn:(?:aws|aws-cn|aws-us-gov):([a-z0-9\\-]+):([a-z0-9\\-]*):([0-9]{12}|\\*)?:(.+)",
+  "flags": "",
+  "examples": [
+    "arn:aws:s3:::my-bucket",
+    "arn:aws:iam::123456789012:role/MyRole",
+    "arn:aws:lambda:us-east-1:123456789012:function:my-function",
+    "arn:aws-cn:s3:::cn-bucket",
+    "arn:aws:ec2:eu-west-1:123456789012:instance/i-0abcd1234ef567890"
+  ],
+  "counterExamples": [
+    "arn:gcp:storage:::my-bucket",
+    "amazon:aws:s3:::my-bucket",
+    "arn:aws",
+    "arn::s3:::bucket"
+  ],
+  "tags": ["aws", "amazon", "arn", "cloud", "infrastructure", "iam"],
+  "useCases": ["AWS IAM policy validation", "CloudFormation resource references", "Infrastructure-as-code tooling"],
+  "seoTitle": "AWS ARN Regex — Validate Amazon Resource Names in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating AWS ARNs across all services (S3, IAM, Lambda, EC2). Generate code snippets for JS, Go, Rust, PHP, and Python."
+}

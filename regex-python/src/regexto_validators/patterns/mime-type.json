@@ -1,0 +1,23 @@
+{
+  "slug": "mime-type",
+  "name": "MIME Media Type",
+  "description": "Validates standard MIME / media type strings (e.g. application/json, image/png, text/html).",
+  "category": "Web",
+  "pattern": "(?:application|audio|font|example|image|message|model|multipart|text|video)\\/[a-zA-Z0-9!#$&^_.+-]+(?:\\s*;\\s*[a-zA-Z0-9._-]+=[a-zA-Z0-9._-]+)*",
+  "flags": "i",
+  "examples": [
+    "application/json",
+    "image/png",
+    "text/html; charset=utf-8",
+    "multipart/form-data"
+  ],
+  "counterExamples": [
+    "invalid_mime",
+    "text/",
+    "unknown/type"
+  ],
+  "tags": ["mime", "media-type", "content-type", "http", "web"],
+  "useCases": ["HTTP Content-Type header validation", "File upload filter", "API response type checker"],
+  "seoTitle": "MIME Media Type Regex — Validate MIME Types in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating MIME / media types. Generate code for JavaScript, Go, Rust, PHP, and Python."
+}

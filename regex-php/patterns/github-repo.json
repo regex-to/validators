@@ -1,0 +1,24 @@
+{
+  "slug": "github-repo",
+  "name": "GitHub Repository",
+  "description": "Validates GitHub repository references in owner/repo format. Owner and repo names must be 1–100 characters and contain only alphanumerics, hyphens, underscores, or dots.",
+  "category": "Internet",
+  "pattern": "[a-zA-Z0-9](?:[a-zA-Z0-9._\\-]{0,37}[a-zA-Z0-9])?/[a-zA-Z0-9][a-zA-Z0-9._\\-]{0,98}",
+  "flags": "",
+  "examples": [
+    "regex-to/validators",
+    "torvalds/linux",
+    "microsoft/TypeScript",
+    "user123/my.repo_name"
+  ],
+  "counterExamples": [
+    "just-a-name",
+    "/missing-owner",
+    "owner/",
+    "-invalid/repo"
+  ],
+  "tags": ["github", "git", "repository", "vcs", "open-source"],
+  "useCases": ["GitHub App integrations", "CI/CD config validation", "Monorepo tooling"],
+  "seoTitle": "GitHub Repository Regex — Validate owner/repo Slugs in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating GitHub repository references (owner/repo format). Generate code for JavaScript, Go, Rust, PHP, and Python."
+}

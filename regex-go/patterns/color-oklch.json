@@ -1,0 +1,25 @@
+{
+  "slug": "color-oklch",
+  "name": "CSS oklch() Color",
+  "description": "Validates CSS oklch() color function values as defined in CSS Color Level 4. Supports lightness (0–1), chroma (0–0.4), hue (0–360), and optional alpha.",
+  "category": "Web",
+  "pattern": "oklch\\(\\s*(?:none|[0-9]*\\.?[0-9]+%?)\\s+(?:none|[0-9]*\\.?[0-9]+)\\s+(?:none|[0-9]*\\.?[0-9]+(?:deg)?)(?:\\s*\\/\\s*(?:[0-9]*\\.?[0-9]+%?))?\\s*\\)",
+  "flags": "i",
+  "examples": [
+    "oklch(0.7 0.15 200)",
+    "oklch(70% 0.15 200deg)",
+    "oklch(0.5 0.2 120 / 0.8)",
+    "oklch(none 0 0)",
+    "oklch(1 0 0 / 50%)"
+  ],
+  "counterExamples": [
+    "oklch()",
+    "oklch(0.7 0.15)",
+    "rgb(255 0 0)",
+    "oklch(1.5 0.2 120)"
+  ],
+  "tags": ["css", "color", "oklch", "web", "design", "color-level-4"],
+  "useCases": ["CSS preprocessor validation", "Design token linting", "Color picker input parsing"],
+  "seoTitle": "CSS oklch() Color Regex — Validate oklch Colors in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating CSS oklch() color values (CSS Color Level 4). Generate code for JavaScript, Go, Rust, PHP, and Python."
+}

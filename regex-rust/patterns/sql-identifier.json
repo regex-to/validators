@@ -1,0 +1,24 @@
+{
+  "slug": "sql-identifier",
+  "name": "SQL Identifier",
+  "description": "Validates SQL table, column, and schema names (unquoted or quoted with double quotes or backticks).",
+  "category": "Database",
+  "pattern": "[a-zA-Z_][a-zA-Z0-9_]*|\"[a-zA-Z_][a-zA-Z0-9_]*\"|`[a-zA-Z_][a-zA-Z0-9_]*`",
+  "flags": "",
+  "examples": [
+    "user_accounts",
+    "\"order_items\"",
+    "`customer_id`",
+    "first_name"
+  ],
+  "counterExamples": [
+    "123user",
+    "user-name",
+    "table;DROP TABLE users;",
+    "\"unmatched_quote"
+  ],
+  "tags": ["sql", "database", "identifier", "table", "column"],
+  "useCases": ["ORM field validation", "SQL query builder linter", "Database migration tool"],
+  "seoTitle": "SQL Identifier Regex — Validate Table & Column Names in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating SQL identifiers (tables, columns). Generate code for JavaScript, Go, Rust, PHP, and Python."
+}

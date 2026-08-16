@@ -1,0 +1,23 @@
+{
+  "slug": "git-branch",
+  "name": "Git Branch Name",
+  "description": "Validates standard Git branch names (e.g. feature/login, bugfix/issue-123, main, release/v1.0.4).",
+  "category": "Developer Tools",
+  "pattern": "(?:[a-zA-Z0-9_.-]+(?:\\/[a-zA-Z0-9_.-]+)*)",
+  "flags": "",
+  "examples": [
+    "main",
+    "feature/login-page",
+    "bugfix/issue-123",
+    "release/v1.0.4"
+  ],
+  "counterExamples": [
+    "branch with spaces",
+    "branch@bad",
+    "feature/branch#tag"
+  ],
+  "tags": ["git", "branch", "vcs", "developer-tools", "workflow"],
+  "useCases": ["Git hook validation", "CI/CD branch rule check", "Release automation"],
+  "seoTitle": "Git Branch Name Regex — Validate Git Branch Names in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating Git branch names. Generate code for JavaScript, Go, Rust, PHP, and Python."
+}

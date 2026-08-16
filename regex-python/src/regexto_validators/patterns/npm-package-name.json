@@ -1,0 +1,24 @@
+{
+  "slug": "npm-package-name",
+  "name": "NPM Package Name",
+  "description": "Validates scoped and unscoped NPM package names according to npm naming rules.",
+  "category": "Developer Tools",
+  "pattern": "(?:@[a-z0-9-~][a-z0-9-._~]*\\/)?[a-z0-9-~][a-z0-9-._~]*",
+  "flags": "",
+  "examples": [
+    "express",
+    "react",
+    "@regexto/validators",
+    "@angular/core"
+  ],
+  "counterExamples": [
+    "_invalid_package",
+    "@scope/",
+    "package name with space",
+    "UPPERCASE_PACKAGE"
+  ],
+  "tags": ["npm", "package", "javascript", "node", "registry"],
+  "useCases": ["NPM package generator input check", "Dependency auditor", "Registry API validator"],
+  "seoTitle": "NPM Package Name Regex — Validate Package Names in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating NPM package names (scoped and unscoped). Generate code for JavaScript, Go, Rust, PHP, and Python."
+}

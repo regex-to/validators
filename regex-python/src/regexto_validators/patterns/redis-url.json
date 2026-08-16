@@ -1,0 +1,22 @@
+{
+  "slug": "redis-url",
+  "name": "Redis Connection URI",
+  "description": "Validates Redis and Redis SSL connection URLs (redis://, rediss://) with optional user, password, port, and DB index.",
+  "category": "Database",
+  "pattern": "rediss?:\\/\\/(?:(?:[^:]+)?(?::(?:[^@]+))?@)?(?:[a-zA-Z0-9.-]+|\\d{1,3}(?:\\.\\d{1,3}){3}):\\d{1,5}(?:\\/\\d{1,2})?",
+  "flags": "",
+  "examples": [
+    "redis://localhost:6379",
+    "redis://user:password@127.0.0.1:6379/0",
+    "rediss://:secretpass@redis.example.com:6380/15"
+  ],
+  "counterExamples": [
+    "http://localhost:6379",
+    "redis://",
+    "invalid-redis-string"
+  ],
+  "tags": ["redis", "uri", "url", "database", "connection-string"],
+  "useCases": ["Environment variable validation", "Backend config loader", "SaaS connection setup"],
+  "seoTitle": "Redis Connection URI Regex — Validate Redis URLs in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating Redis connection URIs. Generate code for JavaScript, Go, Rust, PHP, and Python."
+}

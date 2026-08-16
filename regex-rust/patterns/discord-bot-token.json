@@ -1,0 +1,21 @@
+{
+  "slug": "discord-bot-token",
+  "name": "Discord Bot Token",
+  "description": "Validates Discord bot API tokens consisting of user ID base64, timestamp, and HMAC hash.",
+  "category": "Security",
+  "pattern": "[MNOT][A-Za-z0-9_-]{23,25}\\.[A-Za-z0-9_-]{6}\\.[A-Za-z0-9_-]{27,38}",
+  "flags": "",
+  "examples": [
+    "M123456789012345678901234.X12345.EXAMPLE_DISCORD_BOT_TOKEN_38_DUMMY_",
+    "N123456789012345678901234.Y12345.EXAMPLE_DISCORD_BOT_TOKEN_38_DUMMY_"
+  ],
+  "counterExamples": [
+    "invalid.token",
+    "bot_token_without_dots",
+    "https://discord.com/api/webhooks/123/abc"
+  ],
+  "tags": ["discord", "bot", "token", "security", "api-key"],
+  "useCases": ["Secret detection in source code", "Discord bot setup form validation", "Security scanner"],
+  "seoTitle": "Discord Bot Token Regex — Validate Discord API Tokens in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating Discord bot API tokens. Generate code for JavaScript, Go, Rust, PHP, and Python."
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "semver-range",
+  "name": "SemVer Range Specifier",
+  "description": "Validates Semantic Versioning (SemVer) ranges such as ^1.2.3, ~0.1.0, >=1.0.0, or 1.x.",
+  "category": "Developer Tools",
+  "pattern": "(?:[\\^~]|>=?|<=?|==?)?\\s*v?(?:0|[1-9]\\d*)(?:\\.(?:0|[1-9]\\d*|\\*|x))?(?:\\.(?:0|[1-9]\\d*|\\*|x))?(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?",
+  "flags": "",
+  "examples": [
+    "^1.2.3",
+    "~0.1.0",
+    ">=2.0.0",
+    "v1.0.0-alpha.1",
+    "1.x"
+  ],
+  "counterExamples": [
+    "invalid.version.range",
+    "1.2.3.4",
+    ">>>1.0.0"
+  ],
+  "tags": ["semver", "version", "range", "npm", "dependency"],
+  "useCases": ["Package manager dependency parsing", "Release tag validation", "Config file linting"],
+  "seoTitle": "SemVer Range Regex — Validate Version Ranges in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating SemVer version range specifiers. Generate code for JavaScript, Go, Rust, PHP, and Python."
+}

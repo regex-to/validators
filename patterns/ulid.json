@@ -1,0 +1,22 @@
+{
+  "slug": "ulid",
+  "name": "ULID",
+  "description": "Validates 26-character Crockford Base32 Universally Unique Lexicographically Sortable Identifier (ULID) strings.",
+  "category": "Identifiers",
+  "pattern": "[0-7][0-9A-HJKMNP-TV-Z]{25}",
+  "flags": "i",
+  "examples": [
+    "01ARZ3NDEKTSV4RRFFQ69G5FAV",
+    "01ED5033W4E7V2V00E9FA14C11",
+    "01F8MECH551T082GH696763602"
+  ],
+  "counterExamples": [
+    "01ARZ3NDEKTSV4RRFFQ69G5FA",
+    "81ARZ3NDEKTSV4RRFFQ69G5FAV",
+    "01ARZ3NDEKTSV4RRFFQ69G5FAU"
+  ],
+  "tags": ["ulid", "identifier", "uuid", "database", "id"],
+  "useCases": ["Primary key validation", "Distributed ID verification", "API parameter parsing"],
+  "seoTitle": "ULID Regex — Validate Universally Unique Lexicographically Sortable Identifiers in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating ULIDs. Generate code for JavaScript, Go, Rust, PHP, and Python."
+}

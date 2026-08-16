@@ -1,0 +1,25 @@
+{
+  "slug": "vat-eu",
+  "name": "EU VAT Number",
+  "description": "Validates European Union VAT numbers across all 27 member states. Each country has a 2-letter ISO prefix followed by 8–12 alphanumeric characters.",
+  "category": "Finance",
+  "pattern": "(?:ATU[0-9]{8}|BE[0-9]{10}|BG[0-9]{9,10}|CY[0-9]{8}[A-Z]|CZ[0-9]{8,10}|DE[0-9]{9}|DK[0-9]{8}|EE[0-9]{9}|EL[0-9]{9}|ES[A-Z0-9][0-9]{7}[A-Z0-9]|FI[0-9]{8}|FR[A-Z0-9]{2}[0-9]{9}|HR[0-9]{11}|HU[0-9]{8}|IE[0-9]{7}[A-Z]{1,2}|IT[0-9]{11}|LT(?:[0-9]{9}|[0-9]{12})|LU[0-9]{8}|LV[0-9]{11}|MT[0-9]{8}|NL[0-9]{9}B[0-9]{2}|PL[0-9]{10}|PT[0-9]{9}|RO[0-9]{2,10}|SE[0-9]{12}|SI[0-9]{8}|SK[0-9]{10})",
+  "flags": "i",
+  "examples": [
+    "DE123456789",
+    "FR12345678901",
+    "PL1234567890",
+    "GB123456789",
+    "IT12345678901"
+  ],
+  "counterExamples": [
+    "123456789",
+    "XX123456789",
+    "DE12345",
+    "US123456789"
+  ],
+  "tags": ["vat", "eu", "europe", "tax", "finance", "business"],
+  "useCases": ["B2B invoice validation", "EU e-commerce checkout", "Accounting software integrations"],
+  "seoTitle": "EU VAT Number Regex — Validate VAT IDs for All 27 EU Countries in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating European Union VAT numbers across all 27 member states. Generate code for JS, Go, Rust, PHP, and Python."
+}

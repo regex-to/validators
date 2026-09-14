@@ -69,20 +69,42 @@ function loadPatterns(): Record<string, PatternData> {
  */
 export const PATTERNS: Readonly<Record<string, PatternData>> = loadPatterns();
 
+// ─── Slug Aliases ─────────────────────────────────────────────────────────────
+
+/**
+ * Convenient aliases for common pattern searches (e.g. "nip" -> "pl-nip", "vat" -> "pl-vat").
+ */
+export const SLUG_ALIASES: Readonly<Record<string, string>> = {
+  nip: "pl-nip",
+  regon: "pl-regon",
+  pesel: "pl-pesel",
+  vat: "pl-vat",
+  "vat-pl": "pl-vat",
+  "vat-eu": "vat-eu",
+};
+
+/**
+ * Resolves a slug or alias to the canonical pattern slug.
+ */
+export function resolveSlug(slug: string): string {
+  return SLUG_ALIASES[slug.toLowerCase()] ?? slug;
+}
+
 // ─── Core utilities ───────────────────────────────────────────────────────────
 
 /**
- * Returns a compiled RegExp for the given pattern slug.
+ * Returns a compiled RegExp for the given pattern slug or alias.
  * Throws if the slug is not found.
  */
 export function getRegex(slug: string): RegExp {
-  const p = PATTERNS[slug];
+  const canonical = resolveSlug(slug);
+  const p = PATTERNS[canonical];
   if (!p) throw new Error(`Pattern "${slug}" not found in @regexto/validators`);
   return new RegExp(p.pattern, p.flags);
 }
 
 /**
- * Tests a value against a named pattern.
+ * Tests a value against a named pattern or alias.
  */
 export function test(slug: string, value: string): boolean {
   return getRegex(slug).test(value);
@@ -95,7 +117,8 @@ export function validate(
   slug: string,
   value: string
 ): { valid: boolean; pattern: PatternData; matches: RegExpMatchArray | null } {
-  const p = PATTERNS[slug];
+  const canonical = resolveSlug(slug);
+  const p = PATTERNS[canonical];
   if (!p) throw new Error(`Pattern "${slug}" not found`);
   const regex = new RegExp(`^(?:${p.pattern})$`, p.flags);
   const matches = value.match(regex);
@@ -129,7 +152,8 @@ export function getByTags(tags: string[]): PatternData[] {
  * Returns a single pattern by slug, or null if not found.
  */
 export function getPattern(slug: string): PatternData | null {
-  return PATTERNS[slug] ?? null;
+  const canonical = resolveSlug(slug);
+  return PATTERNS[canonical] ?? null;
 }
 
 /**

@@ -1,0 +1,26 @@
+{
+  "slug": "docker-image",
+  "name": "Docker Image Name",
+  "description": "Validates Docker image references including optional registry host, namespace, name, tag, and digest.",
+  "category": "DevOps",
+  "pattern": "(?:[a-z0-9][a-z0-9.\\-]*(?::[0-9]+)?/)?[a-z0-9][a-z0-9._\\-]*(?:/[a-z0-9._\\-]+)*(?::[a-zA-Z0-9._\\-]+|@sha256:[a-f0-9]{64})?",
+  "flags": "",
+  "examples": [
+    "nginx",
+    "nginx:latest",
+    "nginx:1.25-alpine",
+    "myrepo/myimage:v1.0.0",
+    "ghcr.io/owner/repo:sha-abc1234",
+    "registry.example.com:5000/myimage:latest"
+  ],
+  "counterExamples": [
+    "NGINX",
+    "my image",
+    "image:tag:extra",
+    ""
+  ],
+  "tags": ["docker", "container", "image", "devops", "registry"],
+  "useCases": ["CI/CD pipeline validation", "Kubernetes manifest linting", "Docker Compose file validation"],
+  "seoTitle": "Docker Image Name Regex — Validate Container Images in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating Docker image references with optional registry, namespace, tag, and digest. Generate code for JS, Go, Rust, PHP, Python."
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "us-passport",
+  "name": "US Passport Number",
+  "description": "Validates United States passport numbers: 9 alphanumeric characters starting with 1-2 letters followed by digits.",
+  "category": "Identity",
+  "pattern": "[A-Z]{1,2}[0-9]{7,8}",
+  "flags": "",
+  "examples": [
+    "A12345678",
+    "B98765432",
+    "AB1234567",
+    "C00000001"
+  ],
+  "counterExamples": [
+    "123456789",
+    "ABCDEFGHI",
+    "A1234567",
+    "ABC123456"
+  ],
+  "tags": ["passport", "us", "usa", "identity", "travel", "document"],
+  "useCases": ["Travel booking form validation", "KYC onboarding flows", "Document verification systems"],
+  "seoTitle": "US Passport Number Regex — Validate American Passport Numbers in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating US passport numbers (9 alphanumeric chars). Generate code snippets for JavaScript, Go, Rust, PHP, and Python."
+}

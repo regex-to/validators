@@ -225,3 +225,34 @@ describe("per-pattern example smoke tests", () => {
     });
   }
 });
+
+// ─── Polish business identifiers and aliases ─────────────────────────────────
+
+describe("Polish business identifiers & aliases", () => {
+  it("resolves alias 'nip' to 'pl-nip'", () => {
+    expect(getPattern("nip")?.slug).toBe("pl-nip");
+    expect(regexTest("nip", "5260250274")).toBe(true);
+    expect(regexTest("nip", "123-456-32-18")).toBe(true);
+    expect(validate("nip", "123-456-32-18").valid).toBe(true);
+  });
+
+  it("resolves alias 'regon' to 'pl-regon'", () => {
+    expect(getPattern("regon")?.slug).toBe("pl-regon");
+    expect(regexTest("regon", "123456785")).toBe(true);
+    expect(validate("regon", "123456785").valid).toBe(true);
+  });
+
+  it("resolves alias 'vat' to 'pl-vat'", () => {
+    expect(getPattern("vat")?.slug).toBe("pl-vat");
+    expect(regexTest("vat", "PL5260250274")).toBe(true);
+    expect(regexTest("vat", "PL 123-456-32-18")).toBe(true);
+    expect(validate("vat", "PL5260250274").valid).toBe(true);
+  });
+
+  it("validates 'pl-vat' pattern directly", () => {
+    expect(validate("pl-vat", "PL5260250274").valid).toBe(true);
+    expect(validate("pl-vat", "5260250274").valid).toBe(true);
+    expect(validate("pl-vat", "PL123456789").valid).toBe(false);
+  });
+});
+

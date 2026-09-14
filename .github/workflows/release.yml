@@ -3,6 +3,7 @@ name: Release & Distribute Packages
 on:
   release:
     types: [published]
+  workflow_dispatch:
 
 jobs:
   npm-publish:
@@ -29,29 +30,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-  pypi-publish:
-    name: Publish Python Package
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Install build tools
-        run: python -m pip install --upgrade pip build twine
-      - name: Prepare Patterns
-        run: |
-          mkdir -p regex-python/src/regexto_validators/patterns
-          cp -r patterns/* regex-python/src/regexto_validators/patterns/
-      - name: Build and Publish
-        run: |
-          cd regex-python
-          python -m build
-          twine upload dist/* || true
-        env:
-          TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN || secrets.PYPI_API_TOKEN }}
-
   split-php:
     name: Monorepo Split PHP
     runs-on: ubuntu-latest
@@ -70,6 +48,7 @@ jobs:
           repository_organization: 'regex-to'
           repository_name: 'validators-php'
           branch: 'main'
+          tag: ${{ github.ref_name }}
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
         env:
@@ -93,6 +72,7 @@ jobs:
           repository_organization: 'regex-to'
           repository_name: 'validators-go'
           branch: 'main'
+          tag: ${{ github.ref_name }}
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
         env:
@@ -121,4 +101,29 @@ jobs:
           user_email: "github-actions[bot]@users.noreply.github.com"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+
+  split-python:
+    name: Monorepo Split Python
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Prepare Python Package
+        run: |
+          mkdir -p regex-python/src/regexto_validators/patterns
+          cp -r patterns/* regex-python/src/regexto_validators/patterns/
+      - name: Split and Push
+        uses: danharrin/monorepo-split-github-action@v2.3.0
+        with:
+          package_directory: 'regex-python'
+          repository_organization: 'regex-to'
+          repository_name: 'validators-python'
+          branch: 'main'
+          tag: ${{ github.ref_name }}
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+
 

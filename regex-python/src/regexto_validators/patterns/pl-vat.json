@@ -1,0 +1,29 @@
+{
+  "slug": "pl-vat",
+  "name": "Polish VAT Number (VAT-UE)",
+  "description": "Validates Polish VAT identification numbers (VAT-UE / NIP do celów VAT). Matches standard 10-digit NIP numbers with optional or required 'PL' country prefix and official Polish hyphenation formats.",
+  "category": "Finance",
+  "pattern": "(?:PL)?[ -]?(?:\\d{10}|\\d{3}-\\d{3}-\\d{2}-\\d{2}|\\d{3}-\\d{2}-\\d{2}-\\d{3})",
+  "flags": "i",
+  "examples": [
+    "PL5260250274",
+    "PL1234563218",
+    "5260250274",
+    "123-456-32-18",
+    "PL 123-456-32-18",
+    "PL 123-45-63-218",
+    "PL-5260250274"
+  ],
+  "counterExamples": [
+    "PL123456789",
+    "PL12345678901",
+    "DE123456789",
+    "12345678",
+    "PLabcdefghij"
+  ],
+  "locales": ["pl"],
+  "tags": ["vat", "poland", "polish", "tax", "finance", "nip", "vat-ue", "b2b"],
+  "useCases": ["Polish invoice validation", "EU VIES B2B checkout", "Polish accounting and ERP systems"],
+  "seoTitle": "Polish VAT (VAT-UE / NIP) Regex — Validate Polish VAT Number",
+  "seoDescription": "Regex pattern for validating Polish VAT (VAT-UE) numbers with optional PL prefix and hyphenation. Ready-to-use code in TypeScript, Go, Python, PHP, and Rust."
+}

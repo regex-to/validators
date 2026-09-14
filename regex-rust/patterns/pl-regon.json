@@ -1,15 +1,24 @@
 {
   "slug": "pl-regon",
   "name": "Polish REGON",
-  "description": "Matches a Polish REGON (National Business Registry Number) — 9 digits for companies, 14 digits for local units.",
+  "description": "Matches a Polish REGON (National Business Registry Number) — 9 digits for businesses and companies, 14 digits for local administrative units.",
   "category": "Identity",
-  "pattern": "(\\d{9}|\\d{14})",
+  "pattern": "(?:\\d{9}|\\d{14})",
   "flags": "",
-  "examples": ["123456785", "12345678512347"],
-  "counterExamples": ["12345678", "1234567891234", "123456785A"],
+  "examples": [
+    "123456785",
+    "590096454",
+    "12345678512347"
+  ],
+  "counterExamples": [
+    "12345678",
+    "1234567890",
+    "1234567891234",
+    "123456785A"
+  ],
   "locales": ["pl"],
-  "tags": ["regon", "poland", "polish", "business", "company"],
-  "useCases": ["Polish company registration", "B2B invoicing", "Government APIs"],
-  "seoTitle": "Polish REGON Regex — Validate REGON Numbers",
-  "seoDescription": "Regex for Polish REGON business registry number validation."
+  "tags": ["regon", "poland", "polish", "business", "company", "tax", "identity", "pl"],
+  "useCases": ["Polish company registration", "B2B invoicing", "Government APIs", "Company profile verification"],
+  "seoTitle": "Polish REGON Regex — Validate REGON Numbers in JS, Go, Rust",
+  "seoDescription": "Regex pattern for validating Polish REGON business registry numbers (9 and 14 digits). Ready-to-use validation code for TypeScript, Go, Python, PHP, and Rust."
 }

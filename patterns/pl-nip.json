@@ -1,15 +1,27 @@
 {
   "slug": "pl-nip",
   "name": "Polish NIP (Tax ID)",
-  "description": "Polish NIP (Numer Identyfikacji Podatkowej) — the 10-digit tax identification number used by businesses and self-employed individuals in Poland.",
+  "description": "Polish NIP (Numer Identyfikacji Podatkowej) — the 10-digit tax identification number used by businesses and self-employed individuals in Poland, supported in unhyphenated and official hyphenated formats.",
   "category": "Finance",
-  "pattern": "\\d{10}",
+  "pattern": "(?:\\d{10}|\\d{3}-\\d{3}-\\d{2}-\\d{2}|\\d{3}-\\d{2}-\\d{2}-\\d{3})",
   "flags": "",
-  "examples": ["1234563218", "5260250274", "9999999999"],
-  "counterExamples": ["123456789", "12345678901", "abcdefghij"],
+  "examples": [
+    "1234563218",
+    "5260250274",
+    "123-456-32-18",
+    "526-02-50-274",
+    "9999999999"
+  ],
+  "counterExamples": [
+    "123456789",
+    "12345678901",
+    "123-456-789",
+    "12-345-678-90",
+    "abcdefghij"
+  ],
   "locales": ["pl"],
-  "tags": ["poland", "nip", "tax", "finance", "pl", "polish"],
+  "tags": ["poland", "nip", "tax", "finance", "pl", "polish", "business"],
   "useCases": ["Polish invoice generation", "B2B payment forms", "Tax system integrations"],
   "seoTitle": "Polish NIP Regex — Validate Polish Tax ID (NIP) Pattern",
-  "seoDescription": "Regex pattern for validating Polish NIP numbers. Generate code for JavaScript, TypeScript (Zod), Go, and PHP with unit tests."
+  "seoDescription": "Regex pattern for validating Polish NIP numbers in raw and hyphenated formats. Generate code for JavaScript, TypeScript (Zod), Go, and PHP with unit tests."
 }

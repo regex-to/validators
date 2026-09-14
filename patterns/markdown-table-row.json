@@ -3,7 +3,7 @@
   "name": "Markdown Table Row",
   "description": "Matches a Markdown GFM table row — cells separated by pipe | characters.",
   "category": "Markdown",
-  "pattern": "^\\|(.+\\|)+$",
+  "pattern": "^\\|(?:[^|\\r\\n]+\\|)+$",
   "flags": "m",
   "examples": ["| Name | Age | City |", "| --- | --- | --- |", "| Alice | 30 | London |"],
   "counterExamples": ["Not a table", "| single cell", "no pipes here"],

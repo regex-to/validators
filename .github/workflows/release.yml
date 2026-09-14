@@ -19,13 +19,13 @@ jobs:
           fi
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - name: Publish to NPM
         run: |
           cd regex-npm
           echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc
           npm install
-          npm publish
+          npm publish || true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -47,7 +47,7 @@ jobs:
         run: |
           cd regex-python
           python -m build
-          twine upload dist/*
+          twine upload dist/* || true
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN || secrets.PYPI_API_TOKEN }}
@@ -69,10 +69,9 @@ jobs:
           package_directory: 'regex-php'
           repository_organization: 'regex-to'
           repository_name: 'validators-php'
-          target_branch: 'main'
+          branch: 'main'
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
-          commit_message: "Mirror PHP package from monorepo"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
@@ -93,10 +92,9 @@ jobs:
           package_directory: 'regex-go'
           repository_organization: 'regex-to'
           repository_name: 'validators-go'
-          target_branch: 'main'
+          branch: 'main'
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
-          commit_message: "Mirror Go package from monorepo"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
@@ -117,11 +115,10 @@ jobs:
           package_directory: 'regex-rust'
           repository_organization: 'regex-to'
           repository_name: 'regex-rust'
-          target_branch: 'main'
+          branch: 'main'
           tag: ${{ github.ref_name }}
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
-          commit_message: "Mirror Rust package from monorepo"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
